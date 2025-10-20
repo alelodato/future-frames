@@ -1,0 +1,70 @@
+@import "./variables.css";
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body,
+#root {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: var(--white);
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* contenitore centrale */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 20px
+}
+
+/* link reset */
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+/* pulsanti */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .9rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  letter-spacing: .5px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease
+}
+
+.btn:active {
+  transform: translateY(1px)
+}
+
+.btn-primary {
+  background: var(--violet-electric);
+  color: #0b0512;
+  box-shadow: 0 0 22px rgba(160, 32, 240, .6), 0 0 44px rgba(160, 32, 240, .35);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(160, 32, 240, .8), 0 0 60px rgba(160, 32, 240, .5)
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(160, 32, 240, .8);
+  box-shadow: 0 0 10px rgba(160, 32, 240, .45);
+}
+
+.btn-outline:hover {
+  background: rgba(160, 32, 240, .1)
+}
