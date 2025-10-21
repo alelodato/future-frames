@@ -1,3 +1,25 @@
+@font-face {
+  font-family: "Neon Light";
+  src: url("../assets/fonts/NeonLight-Regular.otf") format("opentype"),
+       url("../assets/fonts/NeonLight-Regular.ttf") format("truetype");
+       font-weight: normal;
+       font-style: normal;
+}
+@font-face {
+  font-family: "Party";
+  src: url("../assets/fonts/PARTY.otf") format("opentype"),
+       url("../assets/fonts/PARTY.ttf") format("truetype");
+       font-weight: normal;
+       font-style: normal;
+}
+@font-face {
+  font-family: "Outline Key";
+  src: url("../assets/fonts/OutlineKei-Regular.ttf") format("opentype"),
+       url("../assets/fonts/OutlineKei-Regular.ttf") format("truetype");
+       font-weight: normal;
+       font-style: normal;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -31,7 +53,7 @@
 }
 
 .title {
-  font-family: "Tilt Neon", sans-serif;
+  font-family: "Party";
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

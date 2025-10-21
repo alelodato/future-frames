@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Doodle Daze";
+  src: url("../assets/fonts/DoodleDaze.otf") format("opentype"),
+       url("../assets/fonts/DoodleDaze.ttf") format("truetype");
+       font-weight: normal;
+       font-style: italic;
+}
+@font-face {
+  font-family: "Late Night";
+  src: url("../assets/fonts/LateNight.otf") format("opentype");
+       font-weight: normal;
+       font-style: italic;
+}
+@font-face {
+  font-family: "Linoleo Script";
+  src: url("../assets/fonts/LinoleoScript.otf") format("opentype"),
+       url("../assets/fonts/LinoleoScript.ttf") format("truetype");
+       font-weight: normal;
+       font-style: italic;
+}
+@font-face {
+  font-family: "Neon Bines";
+  src: url("../assets/fonts/NeonBines.otf") format("opentype"),
+       url("../assets/fonts/NeonBines.ttf") format("truetype");
+       font-weight: normal;
+       font-style: italic;
+}
+
 .wrap {
     position: relative;
     width: 100%;
@@ -31,9 +59,8 @@
 }
 
 .intro1 p {
-    font-family: "Neonderthaw", cursive;
-    font-weight: 400;
-    font-style: normal;
+    font-family: "Neon Bines", cursive;
+    font-style: italic;
     width: 100%;
     padding: 12px 16px;
     font-size: 2rem;
