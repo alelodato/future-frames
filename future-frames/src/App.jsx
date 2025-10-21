@@ -1,6 +1,7 @@
 import "./styles/global.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Intro from "./components/Intro";
 
 export default function App(){
   return (
@@ -8,6 +9,7 @@ export default function App(){
       <Navbar />
       <main>
         <Hero />
+        <Intro />
       </main>
     </>
   );

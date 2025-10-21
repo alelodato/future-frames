@@ -1,5 +1,5 @@
 .nav {
-  position: fixed;
+  position: absolute;
   inset: 0 0 auto 0;
   height: 72px;
   z-index: 50;
