@@ -1,18 +1,18 @@
 import { useEffect, useState, useCallback } from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const LINKS = [
-  { href: "#chi-siamo", label: "CHI SIAMO" },
+  { href: "#about", label: "CHI SIAMO" },
   { href: "#portfolio", label: "PORTFOLIO" },
   { href: "#servizi",  label: "SERVIZI" },
-  { href: "#contatti", label: "CONTATTI" },
+  { href: "#contact", label: "CONTATTI" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // cambia stile dopo lo scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -20,7 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // blocca lo scroll sotto al menu mobile
   useEffect(() => {
     const root = document.documentElement;
     if (open) root.style.overflow = "hidden";
@@ -28,7 +27,6 @@ export default function Navbar() {
     return () => (root.style.overflow = "");
   }, [open]);
 
-  // chiudi con ESC
   const onKeyDown = useCallback((e) => {
     if (e.key === "Escape") setOpen(false);
   }, []);
@@ -43,14 +41,16 @@ export default function Navbar() {
   return (
     <header className={`${styles.nav} ${scrolled ? styles.solid : styles.transparent}`}>
       <div className={`container ${styles.row}`}>
-        <a href="#" className={styles.logo} onClick={close}>
+        <NavLink to="/" className={styles.logo} onClick={close}>
           FUTURE <span>FRAMES</span>
-        </a>
+        </NavLink>
 
         {/* Desktop links */}
         <nav className={styles.links} aria-label="Navigazione principale">
           {LINKS.map((l) => (
-            <a key={l.href} className={styles.link} href={l.href}>{l.label}</a>
+            <NavLink key={l.href} className={styles.link} to={l.href} onClick={close}>
+              {l.label}
+            </NavLink>
           ))}
         </nav>
 
@@ -80,9 +80,9 @@ export default function Navbar() {
         aria-label="Menu mobile"
       >
         {LINKS.map((l) => (
-          <a key={l.href} className={styles.mLink} href={l.href} onClick={close}>
+          <NavLink key={l.href} className={styles.mLink} to={l.href} onClick={close}>
             {l.label}
-          </a>
+          </NavLink>
         ))}
       </nav>
     </header>
