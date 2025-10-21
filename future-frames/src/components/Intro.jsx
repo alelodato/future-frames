@@ -41,7 +41,7 @@ export default function Intro() {
           <Link to="/portfolio">
             <div className={styles.about}>
               <div className={styles.gradient}>
-                <p className={styles.aboutBtn}>Scopri il nostro team</p>
+                <p className={styles.aboutBtn}>Conosci il nostro team</p>
               </div>
             </div>
           </Link>

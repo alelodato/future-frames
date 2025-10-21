@@ -205,11 +205,7 @@
             repeating-linear-gradient(0deg, rgba(13, 13, 13, .03) 0 1px, transparent 1px 3px);
         pointer-events: none;
     }
-
-    .inner {
-        background: radial-gradient(rgba(0, 0, 0, 0.559));
-    }
-
+    
     .intro1 {
         display: flex;
         flex-wrap: nowrap;

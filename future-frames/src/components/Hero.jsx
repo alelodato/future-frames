@@ -6,9 +6,9 @@ export default function Hero() {
       <div className={styles.overlay}>
         <div className={`container ${styles.content}`}>
           <h1 className={styles.title}>
-            CATTURIAMO IL FUTURO,
+            LA VISIONE
             <br />
-            UN FRAME ALLA VOLTA.
+            PRENDE FORMA.
           </h1>
           <div className={styles.ctas}>
             <a href="#portfolio" className={`${styles.btn} ${styles.primary}`}>
