@@ -15,10 +15,12 @@ export default function Intro() {
             <span className={styles.glow}> fotografia</span> e
             <span className={styles.glow}> videomaking </span> professionale.
           </p>
+          <span className={styles.intro1img}>
           <img src="/images/introimg3.webp" alt="" />
           <img src="/images/introimg4.webp" alt="" />
           <img src="/images/introimg5.webp" alt="" />
           <img src="/images/introimg6.webp" alt="" />
+          </span>
         </div>
         <div className={styles.intro2}>
           <p className={styles.line}>

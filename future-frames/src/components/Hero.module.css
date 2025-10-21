@@ -87,3 +87,15 @@
 .outline:hover {
   background: rgba(160, 32, 240, .1)
 }
+
+@media (min-width: 680px) {
+  .content {
+    margin-top: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    margin-top: 150px;
+  }
+}
