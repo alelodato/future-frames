@@ -7,9 +7,11 @@ import Contact from './pages/Contact.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Navbar from './components/Navbar.jsx';
 import Servizi from './pages/Servizi.jsx';
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+  <ScrollToTop />
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
