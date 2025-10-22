@@ -4,10 +4,8 @@ import { Outlet } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 export default function App() {
-  const { pathname } = useLocation();
 
   useEffect(() => {
     AOS.init({
@@ -17,10 +15,6 @@ export default function App() {
       offset: 80,
     });
   }, []);
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [pathname]);
 
   return (
     <>
