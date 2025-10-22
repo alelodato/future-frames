@@ -38,7 +38,7 @@ export default function Intro() {
           </p>
         </div>
         <div className={styles.introButtons}>
-          <Link to="/portfolio">
+          <Link to="/about">
             <div className={styles.about}>
               <div className={styles.gradient}>
                 <p className={styles.aboutBtn}>Conosci il nostro team</p>
