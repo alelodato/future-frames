@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const LINKS = [
-  { href: "#about", label: "CHI SIAMO" },
-  { href: "#portfolio", label: "PORTFOLIO" },
-  { href: "#servizi",  label: "SERVIZI" },
-  { href: "#contact", label: "CONTATTI" },
+  { to: "/about", label: "CHI SIAMO" },
+  { to: "/portfolio", label: "PORTFOLIO" },
+  { to: "/servizi",  label: "SERVIZI" },
+  { to: "/contact", label: "CONTATTI" },
 ];
 
 export default function Navbar() {
@@ -48,7 +48,7 @@ export default function Navbar() {
         {/* Desktop links */}
         <nav className={styles.links} aria-label="Navigazione principale">
           {LINKS.map((l) => (
-            <NavLink key={l.href} className={styles.link} to={l.href} onClick={close}>
+            <NavLink key={l.to} className={styles.link} to={l.to} onClick={close}>
               {l.label}
             </NavLink>
           ))}
@@ -80,7 +80,7 @@ export default function Navbar() {
         aria-label="Menu mobile"
       >
         {LINKS.map((l) => (
-          <NavLink key={l.href} className={styles.mLink} to={l.href} onClick={close}>
+          <NavLink key={l.to} className={styles.mLink} to={l.to} onClick={close}>
             {l.label}
           </NavLink>
         ))}
