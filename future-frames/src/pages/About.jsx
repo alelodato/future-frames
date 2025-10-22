@@ -22,9 +22,9 @@ function About() {
             e identità. Con un occhio attento alla luce e ai dettagli, cattura
             l'essenza di ogni storia, fondendo estetica e spontaneità. <br />
             👉 Scopri i suoi lavori su
-             <a href="https://www.instagram.com/gloria.margarino_/"> Instagram
+             <a href="https://www.instagram.com/gloria.margarino_/" target="_blank"> Instagram
             </a> e
-             <a href="https://www.linkedin.com/in/gloria-margarino-9666b11ba/"> LinkedIn.
+             <a href="https://www.linkedin.com/in/gloria-margarino-9666b11ba/" target="_blank"> LinkedIn.
             </a>
           </p>
         </div>
