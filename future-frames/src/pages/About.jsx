@@ -6,13 +6,23 @@ import videoIvan from "../assets/videos/ToyotaXReply.mp4";
 
 function About() {
   return (
-    
     <section className={styles.wrap} id="about" aria-label="sezione chi siamo">
-        <div className={styles.title}>
-          <h1>
-            <span data-aos="fade-right" data-aos-delay="200"> IL </span> <span data-aos="zoom-in" data-aos-delay="800"> NOSTRO </span> <span data-aos="fade-left" data-aos-delay="400"> TEAM </span>
-          </h1>
-        </div>
+      <div className={styles.title}>
+        <h1>
+          <span data-aos="fade-right" data-aos-delay="200">
+            {" "}
+            IL{" "}
+          </span>{" "}
+          <span data-aos="zoom-in" data-aos-delay="800">
+            {" "}
+            NOSTRO{" "}
+          </span>{" "}
+          <span data-aos="fade-left" data-aos-delay="400">
+            {" "}
+            TEAM{" "}
+          </span>
+        </h1>
+      </div>
       <div className={styles.gloria}>
         <video
           className={styles.video}
@@ -127,8 +137,10 @@ function About() {
         </div>
         <div className={styles.values}>
           <div className={styles.gradient}>
-            <h4 className={styles.creativita}>CREATIVITA'.</h4>{" "}
-            <h4 className={styles.affidabilita}>AFFIDABILITA'.</h4>{" "}
+            <div className={styles.creAffi}>
+              <h4 className={styles.creativita}>CREATIVITA'.</h4>{" "}
+              <h4 className={styles.affidabilita}>AFFIDABILITA'.</h4>{" "}
+            </div>
             <h4 className={styles.qualita}>QUALITA' PROFESSIONALE.</h4>
             <br />
             <p>

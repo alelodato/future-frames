@@ -22,18 +22,6 @@
   font-style: normal;
 }
 
-@media (orientation: portrait) {
-  .video {
-    object-fit: contain;
-  }
-}
-
-@media (orientation: landscape) {
-  .video {
-    object-fit: cover;
-  }
-}
-
 .hero {
   position: relative;
   height: 100vh;
