@@ -8,7 +8,6 @@
   height: var(--nav-h);
   z-index: 100;
   transition: background .25s ease, box-shadow .25s ease;
-  backdrop-filter: saturate(140%) blur(4px);
 }
 
 .transparent {

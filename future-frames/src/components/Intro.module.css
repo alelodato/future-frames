@@ -1,38 +1,44 @@
 @font-face {
-  font-family: "Doodle Daze";
-  src: url("../assets/fonts/DoodleDaze.otf") format("opentype"),
-       url("../assets/fonts/DoodleDaze.ttf") format("truetype");
-       font-weight: normal;
-       font-style: italic;
+    font-family: "Doodle Daze";
+    src: url("../assets/fonts/DoodleDaze.otf") format("opentype"),
+        url("../assets/fonts/DoodleDaze.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
 }
+
 @font-face {
-  font-family: "Late Night";
-  src: url("../assets/fonts/LateNight.otf") format("opentype");
-       font-weight: normal;
-       font-style: italic;
+    font-family: "Late Night";
+    src: url("../assets/fonts/LateNight.otf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
 }
+
 @font-face {
-  font-family: "Linoleo Script";
-  src: url("../assets/fonts/LinoleoScript.otf") format("opentype"),
-       url("../assets/fonts/LinoleoScript.ttf") format("truetype");
-       font-weight: normal;
-       font-style: italic;
+    font-family: "Linoleo Script";
+    src: url("../assets/fonts/LinoleoScript.otf") format("opentype"),
+        url("../assets/fonts/LinoleoScript.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
 }
+
 @font-face {
-  font-family: "Neon Bines";
-  src: url("../assets/fonts/NeonBines.otf") format("opentype"),
-       url("../assets/fonts/NeonBines.ttf") format("truetype");
-       font-weight: normal;
-       font-style: italic;
+    font-family: "Neon Bines";
+    src: url("../assets/fonts/NeonBines.otf") format("opentype"),
+        url("../assets/fonts/NeonBines.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
 }
 
 .wrap {
     position: relative;
     width: 100%;
     padding: 48px 0 40px;
-    background: radial-gradient(ellipse at center, #ab2ea642 0%, #ab2ea661 55%, rgba(0, 0, 0, 1) 100%);
+    background: url(/images/NeonWall2.jpeg)no-repeat center center/cover;
+    /* background: radial-gradient(ellipse at center, #ab2ea642 0%, #ab2ea661 55%, rgba(0, 0, 0, 1) 100%); */
     color: #ffffff;
     box-sizing: border-box;
+    box-shadow: 0 0 6px 0px var(--white), 0 0 10px 10px rgb(160 32 240 / 39%), inset 0 0 20px 2px rgb(160 32 240 / 47%);
+    z-index: 2;
 }
 
 .wrap::before {
@@ -92,6 +98,7 @@
     box-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
     border-radius: 18px;
     box-sizing: border-box;
+    background: radial-gradient(black, #0000004f);
 }
 
 .intro2img {
@@ -146,7 +153,7 @@
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     width: 100%;
     height: 100%;
-    border-radius: 18px;
+    border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,12 +163,10 @@
 .contact {
     text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
     box-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
-    border-radius: 18px;
-    max-width: 350px;
-    width: 320px;
-    height: 50px;
+    border-radius: 2px;
+    width: 100%;
+    height: 100px;
     color: #ffffff;
-    margin: 10px;
     font-size: 1.2rem;
 }
 

@@ -6,14 +6,13 @@ import videoIvan from "../assets/videos/ToyotaXReply.mp4";
 
 function About() {
   return (
+    
     <section className={styles.wrap} id="about" aria-label="sezione chi siamo">
-      <div className={styles.navTitle}>
         <div className={styles.title}>
-          <div className={styles.gradient}>
-            <h1>CHI SIAMO</h1>
-          </div>
+          <h1>
+            <span data-aos="fade-right" data-aos-delay="200"> IL </span> <span data-aos="zoom-in" data-aos-delay="800"> NOSTRO </span> <span data-aos="fade-left" data-aos-delay="400"> TEAM </span>
+          </h1>
         </div>
-      </div>
       <div className={styles.gloria}>
         <video
           className={styles.video}
