@@ -16,7 +16,7 @@
 
 .gloria,
 .ivan {
-    padding: 10px 5px 10px 5px;
+    padding: 30px 5px 50px 5px;
     text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
     box-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
     font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
