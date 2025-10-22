@@ -10,7 +10,6 @@ import Servizi from './pages/Servizi.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <Navbar />
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />

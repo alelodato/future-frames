@@ -1,8 +1,11 @@
 .wrap {
-    background: radial-gradient(ellipse at center, #ab2ea669 0%, #ab2ea65e 55%, rgba(0, 0, 0, 1) 100%);
     color: #ffffff;
     min-height: 100vh;
     padding-top: 70px;
+}
+
+.navTitle {
+    background: url(/images/NeonWall.webp)no-repeat center center/cover;
 }
 
 .title {
@@ -12,17 +15,57 @@
     font-style: normal;
     font-size: 1.5rem;
     text-align: center;
-    border: 4px solid #fff;
-    box-shadow: 0 0 2px var(--white), 0 0 10px rgb(160 32 240), 0 0 22px rgb(160 32 240);
-    margin: 50px;
+}
+
+.video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transform: translate(-50%, -50%);
 }
 
 .gloria,
 .ivan {
-    padding: 30px 5px 50px 5px;
-    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
     box-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
     font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    z-index: 2;
+    position: relative;
+}
+
+.gloriaParagraph strong,
+.gloriaParagraph2 strong {
+    font-family: "Neon Bines", cursive;
+    font-style: italic;
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+}
+
+.gloriaimg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.gloriaimg img {
+    width: 40% !important;
+    margin: 0 !important;
+    padding: 10px;
+}
+
+.gloriaParagraph3 {
+    text-align: right;
+    font-style: italic;
+}
+
+.gradientParagraph {
+    background: linear-gradient(180deg, #000000c7 0%, rgb(0, 0, 0) 65%, #000000cc 100%);
+    contain: content;
 }
 
 .paragraph {
@@ -43,13 +86,16 @@
 .paragraph p {
     font-size: 1rem;
     padding: 10px;
-    margin: 0;
 }
 
 .titleImage {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.titleImage strong {
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
 }
 
 .wrap img {
