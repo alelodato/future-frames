@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./About.module.css";
 import videoBg from "../assets/videos/ShowreelAgg.2025.mp4";
 import videoBg2 from "../assets/videos/SpotEneaXAmazonE-Commerce.mp4";
+import videoIvan from "../assets/videos/ToyotaXReply.mp4";
 
 function About() {
   return (
@@ -46,14 +47,22 @@ function About() {
               fondendo <strong> estetica </strong> e
               <strong> spontaneità </strong>. <br />
               <p className={styles.gloriaParagraph3}>
-                👉 Scopri i suoi lavori su <a
+                👉 Scopri i suoi lavori su{" "}
+                <a
                   href="https://www.instagram.com/gloria.margarino_/"
                   target="_blank"
-                > Instagram
-                </a> e <a
+                >
+                  {" "}
+                  Instagram
+                </a>{" "}
+                e{" "}
+                <a
                   href="https://www.linkedin.com/in/gloria-margarino-9666b11ba/"
                   target="_blank"
-                >  LinkedIn. </a>
+                >
+                  {" "}
+                  LinkedIn.{" "}
+                </a>
               </p>
             </p>
           </div>
@@ -77,11 +86,24 @@ function About() {
               </h2>
               <img src="/images/ivan.jpeg" alt="immagine-ivan" />
             </div>
-            <p>
+            <p className={styles.ivanParagraph}>
               Specializzato nel montaggio video e nella post-produzione, Ivan
-              unisce tecnica e sensibilità artistica per dare ritmo e coerenza
-              narrativa ai progetti. Ogni video è per lui un modo per raccontare
-              emozioni attraverso il movimento e il suono.
+              unisce <strong>TECNICA</strong> e{" "}
+              <strong>SENSIBILITA' ARTISTICA</strong> per dare{" "}
+              <strong> RITMO </strong> e <strong> COERENZA NARRATIVA </strong>{" "}
+              ai progetti.
+            </p>
+            <video
+              className={styles.videoIvan}
+              src={videoIvan}
+              autoPlay
+              loop
+              muted
+              playsInline
+            ></video>
+            <p className={styles.ivanParagraph2}>
+              Ogni video è per lui un modo per raccontare emozioni attraverso il
+              <strong> MOVIMENTO </strong> e il <strong> SUONO. </strong>
             </p>
           </div>
         </div>
@@ -99,7 +121,8 @@ function About() {
             <br />
             <p className={styles.missionSecond}>
               Future Frames nasce con l'obiettivo di creare contenuti visivi che
-              non solo raccontano, ma coinvolgono e ispirano.
+              non solo raccontano, ma <strong> COINVOLGONO </strong> e{" "}
+              <strong> ISPIRANO. </strong>
             </p>
           </div>
         </div>
@@ -110,10 +133,10 @@ function About() {
             <h4 className={styles.qualita}>QUALITA' PROFESSIONALE.</h4>
             <br />
             <p>
-              Ogni progetto è guidato da <strong> passione</strong>,{" "}
-              <strong> cura dei dettagli</strong> e <strong> rispetto</strong>{" "}
+              Ogni progetto è guidato da <strong> PASSIONE </strong>,{" "}
+              <strong> CURA DEI DETTAGLI </strong> E <strong> RISPETTO </strong>{" "}
               per la visione del cliente — perché ogni storia merita di essere{" "}
-              <strong>ricordata</strong> nel tempo.
+              <strong> RICORDATA </strong> nel tempo.
             </p>
           </div>
         </div>

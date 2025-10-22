@@ -88,6 +88,20 @@
     padding: 10px;
 }
 
+.ivan p {
+    font-family: "Oxanium", sans-serif !important;
+}
+
+.ivanParagraph strong,
+.ivanParagraph2 strong {
+    font-style: italic;
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+}
+
+.videoIvan {
+    padding: 30px;
+}
+
 .titleImage {
     display: flex;
     flex-direction: row;
@@ -146,6 +160,10 @@
     font-family: "Oxanium", sans-serif !important;
     text-align: right;
     width: 100%;
+}
+
+.missionSecond strong {
+    font-family: "Oxanium", sans-serif !important;
 }
 
 .mission {
