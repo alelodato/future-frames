@@ -1,23 +1,37 @@
 @font-face {
   font-family: "Neon Light";
   src: url("../assets/fonts/NeonLight-Regular.otf") format("opentype"),
-       url("../assets/fonts/NeonLight-Regular.ttf") format("truetype");
-       font-weight: normal;
-       font-style: normal;
+    url("../assets/fonts/NeonLight-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+
 @font-face {
   font-family: "Party";
   src: url("../assets/fonts/PARTY.otf") format("opentype"),
-       url("../assets/fonts/PARTY.ttf") format("truetype");
-       font-weight: normal;
-       font-style: normal;
+    url("../assets/fonts/PARTY.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+
 @font-face {
   font-family: "Outline Key";
   src: url("../assets/fonts/OutlineKei-Regular.ttf") format("opentype"),
-       url("../assets/fonts/OutlineKei-Regular.ttf") format("truetype");
-       font-weight: normal;
-       font-style: normal;
+    url("../assets/fonts/OutlineKei-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (orientation: portrait) {
+  .video {
+    object-fit: contain;
+  }
+}
+
+@media (orientation: landscape) {
+  .video {
+    object-fit: cover;
+  }
 }
 
 .hero {
@@ -32,12 +46,13 @@
 
 .video {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: -2;
+  transform: translate(-50%, -50%);
 }
 
 .overlay {
