@@ -12,8 +12,8 @@
 
 .intro {
     font-family: "Oxanium", sans-serif;
-    font-size: 1.2rem;
-    padding: 10px;
+    font-size: 1.8rem;
+    padding: 20px;
 }
 
 .intro strong {
@@ -24,6 +24,7 @@
 }
 
 .servizi h3 {
+    font-family: "Poppins", sans-serif;
     margin: 0;
 }
 
@@ -58,13 +59,68 @@
     background: url(/images/eventi.webp)no-repeat center center/cover;
 }
 
+.eventi h3 {
+    font-family: "Oxanium", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    width: 80%;
+}
+
+h3 strong {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+}
+
 .eventi h4 {
+    font-family: "Sansation", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-style: italic;
     margin: 0;
+}
+
+.eventi h4 strong {
+    font-size: 1.6rem;
+    color: rgb(159 157 27);
+    text-shadow: 0 0 20px #002ec4, 0 0 10px rgb(7 0 144 / 70%), 0 0 22px rgb(0 27 188 / 55%);
+}
+
+.eventip {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.eventip1 {
+    text-align: right;
+}
+
+.eventip2 {
+    text-align: left;
+}
+
+.eventip3 {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    text-align: center;
+}
+
+.eventi h5 {
+    font-size: 1.2rem;
+    padding: 50px 0;
+    margin: 0;
+    font-weight: 200;
 }
 
 .aziende {
     background: url(/images/azienda.webp)no-repeat center center/cover;
     contain: content;
+}
+
+.aziende h5 {
+    padding: 20px;
+    margin: 0;
 }
 
 .cerimonie {
