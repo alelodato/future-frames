@@ -40,8 +40,8 @@ export default function Servizi() {
         <div className={styles.aziende}>
           <div className={styles.gradient}>
             <h3>
-              Contenuti visivi su misura che rafforzano l'identità del tuo brand
-              e parlano direttamente al tuo pubblico.
+              CONTENUTI VISIVI SU MISURA CHE RAFFORZANO L'IDENTITÀ DEL TUO BRAND
+              E PARLANO DIRETTAMENTE AL TUO PUBBLICO.
             </h3>
             <h4>
               Raccontiamo la tua azienda con immagini che non si limitano a
