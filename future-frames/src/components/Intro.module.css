@@ -164,13 +164,53 @@
     font-weight: 700;
 }
 
+.slideCaption {
+  color: #fff;
+  max-width: 720px;
+}
+
+.carousel { 
+  position: relative;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carouselViewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 16px;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  transition: transform 360ms cubic-bezier(.22,.9,.25,1);
+  will-change: transform;
+}
+
+.dragging .track {
+  transition: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+  position: relative;
+}
+
 .carouselGradient {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     width: 100%;
     height: 100%;
     border-radius: 18px;
-
-
 }
 
 .carouselBtn {
@@ -269,7 +309,7 @@ figcaption {
   position: relative;
   width: 100%;
   max-width: 760px;
-  margin: 0 auto;
+  margin: 150px auto 0 auto;
   box-sizing: border-box;
 }
 
@@ -312,6 +352,7 @@ figcaption {
     text-decoration: none;
     font-size: 1.2rem;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 /* Medium screens: più spazio e layout misto */

@@ -33,10 +33,20 @@ export default function Intro() {
 
   const [index, setIndex] = useState(0);
   const carouselRef = useRef(null);
+  const trackRef = useRef(null);
+
+  // drag state refs to avoid re-renders
+  const draggingRef = useRef(false);
+  const startXRef = useRef(0);
+  const deltaXRef = useRef(0);
+  const preventClickRef = useRef(false);
+
+  const THRESHOLD = 60; // px to switch slide
+  const CLICK_THRESHOLD = 8; // px to consider drag vs click
 
   const prev = () => setIndex((i) => Math.max(0, i - 1));
   const next = () => setIndex((i) => Math.min(slides.length - 1, i + 1));
-  const goTo = (i) => setIndex(i);
+  const goTo = (i) => setIndex(Math.max(0, Math.min(slides.length - 1, i)));
 
   useEffect(() => {
     const onKey = (e) => {
@@ -45,69 +55,112 @@ export default function Intro() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // ensure track snaps when index changes programmatically
+  useEffect(() => {
+    const track = trackRef.current;
+    if (track) {
+      track.style.transition = "";
+      track.style.transform = `translateX(${ -index * 100 }%)`;
+    }
   }, [index]);
 
-  // SWIPE / SLIDE per mobile
+  // pointer/touch drag with translate feedback
   useEffect(() => {
     const el = carouselRef.current;
-    if (!el) return;
+    const track = trackRef.current;
+    if (!el || !track) return;
 
-    let startX = 0;
-    let startY = 0;
-    let moved = false;
-    const THRESHOLD = 60; // px minimo per considerare swipe
-    const MAX_VERTICAL_DELTA = 80; // se si muove molto in verticale ignora swipe
-
-    function onTouchStart(e) {
-      const t = e.touches ? e.touches[0] : e;
-      startX = t.clientX;
-      startY = t.clientY;
-      moved = false;
-    }
-
-    function onTouchMove(e) {
-      const t = e.touches ? e.touches[0] : e;
-      const dx = t.clientX - startX;
-      const dy = Math.abs(t.clientY - startY);
-      if (dy > MAX_VERTICAL_DELTA) {
-        moved = false;
-        return;
+    function onPointerDown(e) {
+      // only primary button for mouse
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      draggingRef.current = true;
+      startXRef.current = e.clientX;
+      deltaXRef.current = 0;
+      preventClickRef.current = false;
+      if (el.setPointerCapture) {
+        try { el.setPointerCapture(e.pointerId); } catch {}
       }
-      if (Math.abs(dx) > 10) moved = true;
+      el.classList.add(styles.dragging);
+      // temporarily disable transition for immediate feedback
+      track.style.transition = "none";
     }
 
-    function onTouchEnd(e) {
-      if (!moved) return;
-      const t = e.changedTouches ? e.changedTouches[0] : e;
-      const endX = t ? t.clientX : startX;
-      const dx = endX - startX;
+    function onPointerMove(e) {
+      if (!draggingRef.current) return;
+      const rawDx = e.clientX - startXRef.current;
+      let dx = rawDx;
+      // prevent dragging beyond bounds:
+      const atFirst = index === 0;
+      const atLast = index === slides.length - 1;
+      if (atFirst && dx > 0) {
+        // block movement to the right when on first slide
+        dx = 0;
+      } else if (atLast && dx < 0) {
+        // block movement to the left when on last slide
+        dx = 0;
+      }
+      deltaXRef.current = dx;
+      if (Math.abs(rawDx) > CLICK_THRESHOLD) preventClickRef.current = true;
+      track.style.transform = `translateX(calc(${ -index * 100 }% + ${dx}px))`;
+    }
 
+    function onPointerUp(e) {
+      if (!draggingRef.current) return;
+      draggingRef.current = false;
+      const dx = deltaXRef.current;
+      try { if (el.releasePointerCapture) el.releasePointerCapture(e.pointerId); } catch {}
+      // restore transition and decide snap/slide
+      track.style.transition = "";
       if (Math.abs(dx) >= THRESHOLD) {
-        if (dx < 0) {
-          next();
-        } else {
-          prev();
+        if (dx < 0 && index < slides.length - 1) next();
+        else if (dx > 0 && index > 0) prev();
+        else {
+          // if at bounds, snap back
+          track.style.transform = `translateX(${ -index * 100 }%)`;
         }
+      } else {
+        // snap back
+        track.style.transform = `translateX(${ -index * 100 }%)`;
       }
+      deltaXRef.current = 0;
+      setTimeout(() => el.classList.remove(styles.dragging), 50);
     }
 
-    el.addEventListener("touchstart", onTouchStart, { passive: true });
-    el.addEventListener("touchmove", onTouchMove, { passive: true });
-    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    // pointer events
+    el.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerup", onPointerUp);
 
-    el.addEventListener("pointerdown", onTouchStart);
-    el.addEventListener("pointermove", onTouchMove);
-    el.addEventListener("pointerup", onTouchEnd);
+    // touch fallback for older UAs (map to same handlers)
+    function touchStart(e) { onPointerDown(e.changedTouches ? e.changedTouches[0] : e); }
+    function touchMove(e) { onPointerMove(e.changedTouches ? e.changedTouches[0] : e); }
+    function touchEnd(e) { onPointerUp(e.changedTouches ? e.changedTouches[0] : e); }
+    el.addEventListener("touchstart", touchStart, { passive: true });
+    window.addEventListener("touchmove", touchMove, { passive: true });
+    window.addEventListener("touchend", touchEnd, { passive: true });
 
     return () => {
-      el.removeEventListener("touchstart", onTouchStart);
-      el.removeEventListener("touchmove", onTouchMove);
-      el.removeEventListener("touchend", onTouchEnd);
-      el.removeEventListener("pointerdown", onTouchStart);
-      el.removeEventListener("pointermove", onTouchMove);
-      el.removeEventListener("pointerup", onTouchEnd);
+      el.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+      el.removeEventListener("touchstart", touchStart);
+      window.removeEventListener("touchmove", touchMove);
+      window.removeEventListener("touchend", touchEnd);
     };
-  }, [carouselRef, index]);
+  }, [index, slides.length]);
+
+  // prevent Link navigation when user dragged the carousel
+  function onCarouselLinkClick(e) {
+    if (preventClickRef.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      preventClickRef.current = false;
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
 
   return (
     <section
@@ -131,6 +184,7 @@ export default function Intro() {
               <img src="/images/introimg6.webp" alt="" />
             </span>
           </div>
+
           <div className={styles.intro2}>
             <p className={styles.line}>
               Diamo forma ai tuoi momenti e alla tua
@@ -143,7 +197,7 @@ export default function Intro() {
               <Link to="/portfolio" className={styles.portfolioLink}>
                 <p>
                   SCOPRI IL NOSTRO PORTFOLIO{" "}
-                  <i class="fa-solid fa-circle-arrow-right"></i>
+                  <i className="fa-solid fa-circle-arrow-right"></i>
                 </p>
               </Link>
             </p>
@@ -154,42 +208,42 @@ export default function Intro() {
           </div>
 
           <div className={styles.intro3}>
-            <Link to="/servizi" aria-label="Vai alla pagina dei servizi">
+            <Link to="/servizi" aria-label="Vai alla pagina dei servizi" onClick={onCarouselLinkClick}>
               <div
                 className={styles.carousel}
                 ref={carouselRef}
                 aria-roledescription="carousel"
               >
                 <div className={styles.carouselViewport}>
-                  {slides.map((s, i) => (
-                    <figure
-                      key={i}
-                      className={styles.slide}
-                      role="group"
-                      aria-roledescription="slide"
-                      aria-label={`${i + 1} di ${slides.length}`}
-                      style={{
-                        display: i === index ? "block" : "none",
-                        backgroundImage: `url(${s.img})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    >
-                      <div className={styles.carouselGradient}>
-                        <div className={styles.carouselTxt}>
-                          <span
-                            className={styles.visuallyHidden}
-                            aria-hidden="false"
-                          >
-                            {s.title}
-                          </span>
-                          <figcaption className={styles.slideCaption}>
-                            <p className={styles.slideText}>{s.text}</p>
-                          </figcaption>
+                  <div
+                    className={styles.track}
+                    ref={trackRef}
+                    style={{ transform: `translateX(${ -index * 100 }%)` }}
+                  >
+                    {slides.map((s, i) => (
+                      <figure
+                        key={i}
+                        className={styles.slide}
+                        role="group"
+                        aria-roledescription="slide"
+                        aria-label={`${i + 1} di ${slides.length}`}
+                        style={{
+                          backgroundImage: `url(${s.img})`,
+                        }}
+                      >
+                        <div className={styles.carouselGradient}>
+                          <div className={styles.carouselTxt}>
+                            <span className={styles.visuallyHidden} aria-hidden="false">
+                              {s.title}
+                            </span>
+                            <figcaption className={styles.slideCaption}>
+                              <p className={styles.slideText}>{s.text}</p>
+                            </figcaption>
+                          </div>
                         </div>
-                      </div>
-                    </figure>
-                  ))}
+                      </figure>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Link>
@@ -197,9 +251,7 @@ export default function Intro() {
 
           <div className={styles.carouselBtn}>
             <button
-              className={`${styles.arrow} ${
-                index === 0 ? styles.arrowDisabled : ""
-              }`}
+              className={`${styles.arrow} ${index === 0 ? styles.arrowDisabled : ""}`}
               onClick={prev}
               aria-label="Slide precedente"
               aria-disabled={index === 0}
@@ -208,9 +260,7 @@ export default function Intro() {
               ‹
             </button>
             <button
-              className={`${styles.arrow} ${styles.arrowRight} ${
-                index === slides.length - 1 ? styles.arrowDisabled : ""
-              }`}
+              className={`${styles.arrow} ${styles.arrowRight} ${index === slides.length - 1 ? styles.arrowDisabled : ""}`}
               onClick={next}
               aria-label="Slide successivo"
               aria-disabled={index === slides.length - 1}
@@ -218,17 +268,12 @@ export default function Intro() {
             >
               ›
             </button>
-            <div
-              className={styles.indicators}
-              role="tablist"
-              aria-label="Seleziona slide"
-            >
+
+            <div className={styles.indicators} role="tablist" aria-label="Seleziona slide">
               {slides.map((_, i) => (
                 <button
                   key={i}
-                  className={`${styles.indicator} ${
-                    i === index ? styles.activeIndicator : ""
-                  }`}
+                  className={`${styles.indicator} ${i === index ? styles.activeIndicator : ""}`}
                   onClick={() => goTo(i)}
                   aria-label={`Vai alla slide ${i + 1}`}
                   aria-pressed={i === index}
@@ -236,9 +281,10 @@ export default function Intro() {
               ))}
             </div>
           </div>
+
           <Link to="/servizi" className={styles.serviziLink}>
             <p>
-              Scopri di piú <i class="fa-solid fa-circle-arrow-right"></i>
+              Scopri di piú <i className="fa-solid fa-circle-arrow-right"></i>
             </p>
           </Link>
 
@@ -249,7 +295,7 @@ export default function Intro() {
           <Link to="/about" className={styles.aboutLink}>
             <p>
               Conosci il nostro team{" "}
-              <i class="fa-solid fa-circle-arrow-right"></i>
+              <i className="fa-solid fa-circle-arrow-right"></i>
             </p>
           </Link>
         </div>
