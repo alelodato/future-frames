@@ -21,12 +21,12 @@ export default function Intro() {
     },
     {
       img: "/images/introimg6.webp",
-      title: "SERVIZIO 4",
+      title: "FOOD",
       text: "Descrizione del quarto servizio, post-produzione e coerenza.",
     },
     {
       img: "/images/montaggio.webp",
-      title: "SERVIZIO 5",
+      title: "MONTAGGIO",
       text: "Descrizione del quinto servizio, strategia e risultato.",
     },
   ];
@@ -85,42 +85,45 @@ export default function Intro() {
             <h3>I NOSTRI SERVIZI</h3>
           </div>
           <div className={styles.intro3}>
-            <div
-              className={styles.carousel}
-              ref={carouselRef}
-              aria-roledescription="carousel"
-            >
-              <div className={styles.carouselViewport}>
-                {slides.map((s, i) => (
-                  <figure
-                    key={i}
-                    className={styles.slide}
-                    role="group"
-                    aria-roledescription="slide"
-                    aria-label={`${i + 1} di ${slides.length}`}
-                    style={{
-                      display: i === index ? "block" : "none",
-                      backgroundImage: `url(${s.img})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <div className={styles.carouselGradient}>
-                      <span
-                        className={styles.visuallyHidden}
-                        aria-hidden="false"
-                      >
-                        {s.title}
-                      </span>
-                      <figcaption className={styles.slideCaption}>
-                        <h4 className={styles.slideTitle}>{s.title}</h4>
-                        <p className={styles.slideText}>{s.text}</p>
-                      </figcaption>
-                    </div>
-                  </figure>
-                ))}
+            <Link to="/servizi" aria-label="Vai alla pagina dei servizi">
+              <div
+                className={styles.carousel}
+                ref={carouselRef}
+                aria-roledescription="carousel"
+              >
+                <div className={styles.carouselViewport}>
+                  {slides.map((s, i) => (
+                    <figure
+                      key={i}
+                      className={styles.slide}
+                      role="group"
+                      aria-roledescription="slide"
+                      aria-label={`${i + 1} di ${slides.length}`}
+                      style={{
+                        display: i === index ? "block" : "none",
+                        backgroundImage: `url(${s.img})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    >
+                      <div className={styles.carouselGradient}>
+                        <div className={styles.carouselTxt}>
+                          <span
+                            className={styles.visuallyHidden}
+                            aria-hidden="false"
+                          >
+                            {s.title}
+                          </span>
+                          <figcaption className={styles.slideCaption}>
+                            <p className={styles.slideText}>{s.text}</p>
+                          </figcaption>
+                        </div>
+                      </div>
+                    </figure>
+                  ))}
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className={styles.carouselBtn}>
             <button
