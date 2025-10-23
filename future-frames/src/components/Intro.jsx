@@ -141,7 +141,10 @@ export default function Intro() {
               con immagini che comunicano e
               <span className={styles.glow}> restano nel tempo.</span>
               <Link to="/portfolio" className={styles.portfolioLink}>
-              <p>SCOPRI IL NOSTRO PORTFOLIO <i class="fa-solid fa-circle-arrow-right"></i></p>
+                <p>
+                  SCOPRI IL NOSTRO PORTFOLIO{" "}
+                  <i class="fa-solid fa-circle-arrow-right"></i>
+                </p>
               </Link>
             </p>
           </div>
@@ -194,7 +197,9 @@ export default function Intro() {
 
           <div className={styles.carouselBtn}>
             <button
-              className={`${styles.arrow} ${index === 0 ? styles.arrowDisabled : ""}`}
+              className={`${styles.arrow} ${
+                index === 0 ? styles.arrowDisabled : ""
+              }`}
               onClick={prev}
               aria-label="Slide precedente"
               aria-disabled={index === 0}
@@ -203,7 +208,9 @@ export default function Intro() {
               ‹
             </button>
             <button
-              className={`${styles.arrow} ${styles.arrowRight} ${index === slides.length - 1 ? styles.arrowDisabled : ""}`}
+              className={`${styles.arrow} ${styles.arrowRight} ${
+                index === slides.length - 1 ? styles.arrowDisabled : ""
+              }`}
               onClick={next}
               aria-label="Slide successivo"
               aria-disabled={index === slides.length - 1}
@@ -211,11 +218,17 @@ export default function Intro() {
             >
               ›
             </button>
-            <div className={styles.indicators} role="tablist" aria-label="Seleziona slide">
+            <div
+              className={styles.indicators}
+              role="tablist"
+              aria-label="Seleziona slide"
+            >
               {slides.map((_, i) => (
                 <button
                   key={i}
-                  className={`${styles.indicator} ${i === index ? styles.activeIndicator : ""}`}
+                  className={`${styles.indicator} ${
+                    i === index ? styles.activeIndicator : ""
+                  }`}
                   onClick={() => goTo(i)}
                   aria-label={`Vai alla slide ${i + 1}`}
                   aria-pressed={i === index}
@@ -223,23 +236,22 @@ export default function Intro() {
               ))}
             </div>
           </div>
+          <Link to="/servizi" className={styles.serviziLink}>
+            <p>
+              Scopri di piú <i class="fa-solid fa-circle-arrow-right"></i>
+            </p>
+          </Link>
 
-          <div className={styles.introButtons}>
-            <Link to="/about">
-              <div className={styles.about}>
-                <div className={styles.gradient}>
-                  <p className={styles.aboutBtn}>Conosci il nostro team</p>
-                </div>
-              </div>
-            </Link>
-            <Link to="/contact">
-              <div className={styles.contact}>
-                <div className={styles.gradient}>
-                  <p className={styles.contactBtn}>Contattaci</p>
-                </div>
-              </div>
-            </Link>
+          <div className={styles.about}>
+            <img src="/images/gloria2.jpeg" alt="immagine-gloria" />
+            <img src="/images/ivan.jpeg" alt="immagine-ivan" />
           </div>
+          <Link to="/about" className={styles.aboutLink}>
+            <p>
+              Conosci il nostro team{" "}
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </p>
+          </Link>
         </div>
       </div>
     </section>
