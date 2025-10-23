@@ -51,6 +51,7 @@
 
 .gradient {
     background: radial-gradient(rgba(0, 0, 0, 0.7));
+    height: 100%;
 }
 
 .inner {
@@ -201,6 +202,10 @@ figure span {
 figcaption {
     padding: 20px;
     font-size: 1.2rem;
+}
+
+.arrow {
+    display: none;
 }
 
 .about,

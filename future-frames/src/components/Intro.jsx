@@ -34,6 +34,10 @@ export default function Intro() {
   const [index, setIndex] = useState(0);
   const carouselRef = useRef(null);
 
+  const prev = () => setIndex((i) => Math.max(0, i - 1));
+  const next = () => setIndex((i) => Math.min(slides.length - 1, i + 1));
+  const goTo = (i) => setIndex(i);
+
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowLeft") prev();
@@ -43,9 +47,67 @@ export default function Intro() {
     return () => window.removeEventListener("keydown", onKey);
   }, [index]);
 
-  const prev = () => setIndex((i) => Math.max(0, i - 1));
-  const next = () => setIndex((i) => Math.min(slides.length - 1, i + 1));
-  const goTo = (i) => setIndex(i);
+  // SWIPE / SLIDE per mobile
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+
+    let startX = 0;
+    let startY = 0;
+    let moved = false;
+    const THRESHOLD = 60; // px minimo per considerare swipe
+    const MAX_VERTICAL_DELTA = 80; // se si muove molto in verticale ignora swipe
+
+    function onTouchStart(e) {
+      const t = e.touches ? e.touches[0] : e;
+      startX = t.clientX;
+      startY = t.clientY;
+      moved = false;
+    }
+
+    function onTouchMove(e) {
+      const t = e.touches ? e.touches[0] : e;
+      const dx = t.clientX - startX;
+      const dy = Math.abs(t.clientY - startY);
+      if (dy > MAX_VERTICAL_DELTA) {
+        moved = false;
+        return;
+      }
+      if (Math.abs(dx) > 10) moved = true;
+    }
+
+    function onTouchEnd(e) {
+      if (!moved) return;
+      const t = e.changedTouches ? e.changedTouches[0] : e;
+      const endX = t ? t.clientX : startX;
+      const dx = endX - startX;
+
+      if (Math.abs(dx) >= THRESHOLD) {
+        if (dx < 0) {
+          next();
+        } else {
+          prev();
+        }
+      }
+    }
+
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+
+    el.addEventListener("pointerdown", onTouchStart);
+    el.addEventListener("pointermove", onTouchMove);
+    el.addEventListener("pointerup", onTouchEnd);
+
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("pointerdown", onTouchStart);
+      el.removeEventListener("pointermove", onTouchMove);
+      el.removeEventListener("pointerup", onTouchEnd);
+    };
+  }, [carouselRef, index]);
 
   return (
     <section
@@ -69,6 +131,7 @@ export default function Intro() {
               <img src="/images/introimg6.webp" alt="" />
             </span>
           </div>
+
           <div className={styles.intro2}>
             <p className={styles.line}>
               Diamo forma ai tuoi momenti e alla tua
@@ -81,9 +144,11 @@ export default function Intro() {
               <span className={styles.intro2img}></span>
             </p>
           </div>
+
           <div className={styles.intro3title}>
             <h3>I NOSTRI SERVIZI</h3>
           </div>
+
           <div className={styles.intro3}>
             <Link to="/servizi" aria-label="Vai alla pagina dei servizi">
               <div
@@ -125,11 +190,10 @@ export default function Intro() {
               </div>
             </Link>
           </div>
+
           <div className={styles.carouselBtn}>
             <button
-              className={`${styles.arrow} ${
-                index === 0 ? styles.arrowDisabled : ""
-              }`}
+              className={`${styles.arrow} ${index === 0 ? styles.arrowDisabled : ""}`}
               onClick={prev}
               aria-label="Slide precedente"
               aria-disabled={index === 0}
@@ -138,9 +202,7 @@ export default function Intro() {
               ‹
             </button>
             <button
-              className={`${styles.arrow} ${styles.arrowRight} ${
-                index === slides.length - 1 ? styles.arrowDisabled : ""
-              }`}
+              className={`${styles.arrow} ${styles.arrowRight} ${index === slides.length - 1 ? styles.arrowDisabled : ""}`}
               onClick={next}
               aria-label="Slide successivo"
               aria-disabled={index === slides.length - 1}
@@ -148,17 +210,11 @@ export default function Intro() {
             >
               ›
             </button>
-            <div
-              className={styles.indicators}
-              role="tablist"
-              aria-label="Seleziona slide"
-            >
+            <div className={styles.indicators} role="tablist" aria-label="Seleziona slide">
               {slides.map((_, i) => (
                 <button
                   key={i}
-                  className={`${styles.indicator} ${
-                    i === index ? styles.activeIndicator : ""
-                  }`}
+                  className={`${styles.indicator} ${i === index ? styles.activeIndicator : ""}`}
                   onClick={() => goTo(i)}
                   aria-label={`Vai alla slide ${i + 1}`}
                   aria-pressed={i === index}
@@ -166,6 +222,7 @@ export default function Intro() {
               ))}
             </div>
           </div>
+
           <div className={styles.introButtons}>
             <Link to="/about">
               <div className={styles.about}>
