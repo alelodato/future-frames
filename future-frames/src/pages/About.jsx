@@ -55,7 +55,7 @@ function About() {
               <strong> dettagli </strong>, cattura l'essenza di ogni storia,
               fondendo <strong> estetica </strong> e
               <strong> spontaneità </strong>. <br />
-              <p className={styles.gloriaParagraph3}>
+              <span className={styles.gloriaParagraph3}>
                 👉 Scopri i suoi lavori su{" "}
                 <a
                   href="https://www.instagram.com/gloria.margarino_/"
@@ -72,7 +72,7 @@ function About() {
                   {" "}
                   LinkedIn.{" "}
                 </a>
-              </p>
+              </span>
             </p>
           </div>
         </div>
@@ -150,6 +150,11 @@ function About() {
               <strong> RICORDATA </strong> nel tempo.
             </p>
           </div>
+          <Link  to="/servizi">
+          <div className={styles.servizi}>
+            <h5>SCOPRI I NOSTRI SERVIZI</h5>
+          </div>
+          </Link>
         </div>
       </div>
     </section>
