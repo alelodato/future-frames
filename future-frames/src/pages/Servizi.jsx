@@ -83,7 +83,7 @@ export default function Servizi() {
               con emozioni vere e spontanee.
             </h3>
             <p>
-              Servizi foto e video per: matrimoni battesimi 18esimi anniversari
+              Servizi foto e video per: matrimoni, battesimi, 18esimi, anniversari
               di matrimonio Stile elegante, reportage naturale, attenzione ai
               dettagli e ai momenti autentici.
             </p>

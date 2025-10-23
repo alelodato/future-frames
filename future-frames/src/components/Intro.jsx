@@ -7,27 +7,27 @@ export default function Intro() {
     {
       img: "/images/eventi.webp",
       title: "EVENTI",
-      text: "Descrizione breve del primo servizio, creatività e cura dei dettagli.",
+      text: "Fotografia e video per eventi privati e aziendali.",
     },
     {
       img: "/images/azienda.webp",
       title: "AZIENDE",
-      text: "Descrizione del secondo servizio, stile e produzione professionale.",
+      text: "Raccontiamo la tua azienda con immagini che non si limitano mostrare, ma comunicano valore.",
     },
     {
       img: "/images/sfondo.jpg",
       title: "CERIMONIE",
-      text: "Descrizione del terzo servizio, narrazione visiva e impatto.",
+      text: "Servizi foto e video per: matrimoni, battesimi, 18esimi e anniversari.",
     },
     {
       img: "/images/introimg6.webp",
       title: "FOOD",
-      text: "Descrizione del quarto servizio, post-produzione e coerenza.",
+      text: "Shooting fotografico e video per ristoranti, chef e aziende del settore.",
     },
     {
       img: "/images/montaggio.webp",
       title: "MONTAGGIO",
-      text: "Descrizione del quinto servizio, strategia e risultato.",
+      text: "Servizio di Post-produzione e editing professionale.",
     },
   ];
 
