@@ -103,7 +103,7 @@
     font-family: "Ephesis", cursive;
     font-weight: 400;
     font-style: normal;
-    margin: 50px 10px 50px 10px;
+    margin: 50px 10px 150px 10px;
     text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
 }
 
@@ -112,6 +112,18 @@
     height: 500px;
     object-fit: cover;
     margin: 20px 0;
+}
+
+.portfolioLink {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.portfolioLink i {
+    font-size: 1.2rem;
 }
 
 /* testi adattati per mobile */

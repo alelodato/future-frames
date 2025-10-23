@@ -131,7 +131,6 @@ export default function Intro() {
               <img src="/images/introimg6.webp" alt="" />
             </span>
           </div>
-
           <div className={styles.intro2}>
             <p className={styles.line}>
               Diamo forma ai tuoi momenti e alla tua
@@ -141,7 +140,9 @@ export default function Intro() {
             <p className={styles.line}>
               con immagini che comunicano e
               <span className={styles.glow}> restano nel tempo.</span>
-              <span className={styles.intro2img}></span>
+              <Link to="/portfolio" className={styles.portfolioLink}>
+              <p>SCOPRI IL NOSTRO PORTFOLIO <i class="fa-solid fa-circle-arrow-right"></i></p>
+              </Link>
             </p>
           </div>
 
