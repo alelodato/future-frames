@@ -78,17 +78,17 @@ h3 strong {
 }
 
 .eventi h4 {
-    font-family: "Sansation", sans-serif;
-    font-weight: 400;
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
     font-size: 1.5rem;
-    font-style: italic;
     margin: 0;
 }
 
 .eventi h4 strong {
     font-size: 1.6rem;
-    color: rgb(159 157 27);
-    text-shadow: 0 0 20px #002ec4, 0 0 10px rgb(7 0 144 / 70%), 0 0 22px rgb(0 27 188 / 55%);
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgb(0 11 255 / 70%), 0 0 22px rgb(0 17 146 / 55%);
 }
 
 .eventip {

@@ -55,24 +55,24 @@ function About() {
               <strong> dettagli </strong>, cattura l'essenza di ogni storia,
               fondendo <strong> estetica </strong> e
               <strong> spontaneità </strong>. <br />
-              <span className={styles.gloriaParagraph3}>
-                👉 Scopri i suoi lavori su{" "}
-                <a
-                  href="https://www.instagram.com/gloria.margarino_/"
-                  target="_blank"
-                >
-                  {" "}
-                  Instagram
-                </a>{" "}
-                e{" "}
-                <a
-                  href="https://www.linkedin.com/in/gloria-margarino-9666b11ba/"
-                  target="_blank"
-                >
-                  {" "}
-                  LinkedIn.{" "}
-                </a>
-              </span>
+            </p>
+            <p className={styles.gloriaParagraph3}>
+              SCOPRI I SUOI LAVORI SU{" "} <br />
+              <a
+                href="https://www.instagram.com/gloria.margarino_/"
+                target="_blank"
+              >
+                {" "}
+                Instagram
+              </a><i class="fa-brands fa-instagram"></i>{" "}
+              e{" "}
+              <a
+                href="https://www.linkedin.com/in/gloria-margarino-9666b11ba/"
+                target="_blank"
+              >
+                {" "}
+                LinkedIn{" "}
+              </a><i class="fa-brands fa-linkedin"></i>
             </p>
           </div>
         </div>
@@ -150,10 +150,10 @@ function About() {
               <strong> RICORDATA </strong> nel tempo.
             </p>
           </div>
-          <Link  to="/servizi">
-          <div className={styles.servizi}>
-            <h5>SCOPRI I NOSTRI SERVIZI</h5>
-          </div>
+          <Link to="/servizi">
+            <div className={styles.servizi}>
+              <h5>SCOPRI I NOSTRI SERVIZI</h5>
+            </div>
           </Link>
         </div>
       </div>
