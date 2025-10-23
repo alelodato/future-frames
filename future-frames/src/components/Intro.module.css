@@ -80,6 +80,7 @@
     height: 400px;
     margin-bottom: 80px;
     border-radius: 8px;
+    margin: 50px;
 }
 
 /* immagini intro1: due colonne o wrap su mobile */
@@ -97,7 +98,7 @@
 /* intro2: bordo ridotto su mobile per mantenere look ma più compatto */
 .intro2 {
     padding: 20px;
-    margin: 18px;
+    margin: 80px 18px 50px 18px;
     border: 6px solid rgb(160 32 240);
     text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
     box-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
