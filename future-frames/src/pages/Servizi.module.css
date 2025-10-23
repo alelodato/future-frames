@@ -1,0 +1,29 @@
+.wrap {
+    padding-top: 70px;
+    background: url(/images/NeonWall.webp)no-repeat center center/cover;
+    color: #ffffff;
+    max-height: 45vh;
+    width: 100%;
+}
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%), rgb(0 0 0 / 77%));
+    contain: content;
+    height: 35vh;
+}
+
+.intro {
+    font-family: "Oxanium", sans-serif;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.intro strong {
+    font-size: 1.5rem;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+}
