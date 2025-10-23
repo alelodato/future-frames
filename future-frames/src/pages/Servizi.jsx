@@ -2,21 +2,86 @@ import styles from "./Servizi.module.css";
 
 export default function Servizi() {
   return (
-    <div className={styles.wrap}>
-      <div className={styles.title}>
-        <h1>I NOSTRI SERVIZI</h1>
+    <section>
+      <div className={styles.wrap}>
+        <div className={styles.gradient}>
+          <div className={styles.intro}>
+            <p className={styles.introP2}>
+              Con<strong> CREATIVITA'</strong>,
+              <strong> QUALITA' PROFESSIONALE</strong> e
+              <strong> MASSIMA AFFIDABILITA'</strong>, accompagniamo ogni
+              passaggio — dalla prima ripresa al risultato finale
+            </p>
+          </div>
+        </div>
       </div>
-      <div className={styles.intro}>
-        <p className={styles.introP2}>
-          Con<strong> CREATIVITA'</strong>,<strong> QUALITA' PROFESSIONALE</strong> e
-          <strong> MASSIMA AFFIDABILITA'</strong>, accompagniamo ogni passaggio —
-          dalla prima ripresa al risultato finale
-        </p>
-        <p className={styles.introP3}>
-          Scopri come possiamo valorizzare anche il tuo progetto, un frame alla
-          volta.
-        </p>
-      </div>
-    </div>
+      <section className={styles.servizi}>
+        <div className={styles.eventi}>
+          <h3>
+            Dal backstage al momento clou: raccontiamo l'energia dei tuoi eventi
+            con immagini che coinvolgono e restano.
+          </h3>
+          <p>
+            Fotografia e video per eventi privati e aziendali. Copertura
+            completa con scatti spontanei e riprese dinamiche. Ideale per feste,
+            lanci di prodotto, eventi culturali, convention.
+          </p>
+        </div>
+        <div className={styles.aziende}>
+          <h3>
+            Contenuti visivi su misura che rafforzano l'identità del tuo brand e
+            parlano direttamente al tuo pubblico.
+          </h3>
+          <p>
+            Raccontiamo la tua azienda con immagini che non si limitano a
+            mostrare, ma comunicano valore. Dai ritratti corporate ai video
+            istituzionali, fino agli spotpubblicitari e ai contenuti social,
+            ogni progetto è studiato per valorizzare la tua identità e
+            distinguerti sul mercato.
+          </p>
+          <h4>Cosa possiamo realizzare per te:</h4>
+          <p>
+            Video istituzionali e corporate: per presentare l’azienda, i valori
+            e le persone dietro al brand. Spot pubblicitari e social video:
+            contenuti brevi e di impatto per campagne e distribuzione digitale.
+            Ritratti e fotografia aziendale: immagini professionali di team,
+            sedi, prodotti e processi. Contenuti per employer branding: video e
+            foto che raccontano la cultura aziendale e attraggono talenti.
+            Shooting prodotto/servizio: still-life e foto ambientate per
+            cataloghi, e-commerce e materiale promozionale.
+          </p>
+        </div>
+        <div className={styles.cerimonie}>
+          <h3>
+            I momenti più importanti meritano di essere ricordati per sempre,
+            con emozioni vere e spontanee.
+          </h3>
+          <p>
+            Servizi foto e video per: matrimoni battesimi 18esimi anniversari di
+            matrimonio Stile elegante, reportage naturale, attenzione ai
+            dettagli e ai momenti autentici.
+          </p>
+        </div>
+        <div className={styles.food}>
+          <h3>
+            Ogni piatto diventa un’immagine che conquista lo sguardo e racconta
+            la tua cucina.
+          </h3>
+          <p>
+            Shooting fotografico e video per ristoranti, chef e aziende del
+            settore. Immagini per menu, social, campagne pubblicitarie. Riprese
+            video con focus su estetica e storytelling del piatto.
+          </p>
+        </div>
+        <div className={styles.montaggio}>
+          <h3>Dove le immagini trovano ritmo, senso e impatto.</h3>
+          <p>
+            Post-produzione e editing professionale per: spot pubblicitari
+            videoclip musicali documentari cinematografici e televisivi progetti
+            cinematografici
+          </p>
+        </div>
+      </section>
+    </section>
   );
 }
