@@ -65,6 +65,7 @@
     "YROT" 0;
   font-size: clamp(2.2rem, 4vw + 1rem, 4.2rem);
   letter-spacing: 2px;
+  font-size: 2.5rem;
   color: var(--white);
   text-shadow:
     0 0 2px var(--white),
