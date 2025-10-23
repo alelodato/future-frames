@@ -6,7 +6,7 @@
 }
 
 .gradient {
-    background: radial-gradient(rgba(0, 0, 0, 0.365));
+    background: radial-gradient(rgba(0, 0, 0, 0.7));
 }
 
 
@@ -23,6 +23,58 @@
     text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
 }
 
-.servizi {
-    padding: 10px;
+.servizi h3 {
+    margin: 0;
+}
+
+.eventi h3,
+.aziende h3,
+.cerimonie h3,
+.food h3,
+.montaggio h3 {
+    padding: 20px;
+    margin: 0;
+}
+
+.eventi h4,
+.aziende h4,
+.cerimonie h4,
+.food h4,
+.montaggio h4 {
+    padding: 0 20px;
+    margin: 0;
+}
+
+.eventi p,
+.aziende p,
+.cerimonie p,
+.food p,
+.montaggio p {
+    padding: 20px;
+    margin: 0;
+}
+
+.eventi {
+    background: url(/images/eventi.webp)no-repeat center center/cover;
+}
+
+.eventi h4 {
+    margin: 0;
+}
+
+.aziende {
+    background: url(/images/azienda.webp)no-repeat center center/cover;
+    contain: content;
+}
+
+.cerimonie {
+    background: url(/images/sfondo.jpg)no-repeat center center/cover;
+}
+
+.food {
+    background: url(/images/introimg6.webp)no-repeat center center/cover;
+}
+
+.montaggio {
+    background: url(/images/montaggio.webp)no-repeat center center/cover;
 }
