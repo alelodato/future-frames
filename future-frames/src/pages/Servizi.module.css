@@ -306,9 +306,29 @@ h3 strong {
     font-weight: 200;
     font-style: normal;
     font-size: 1.5rem;
-        padding: 50px 10px 100px 10px;
+    padding: 50px 10px 100px 10px;
 }
 
 .montaggio {
     background: url(/images/montaggio.webp)no-repeat center center/cover;
+}
+
+.montaggio h3 {
+    font-family: "Orbitron", sans-serif;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.montaggio h4 {
+    font-family: "Oxanium", sans-serif;
+    font-size: 1.8rem;
+}
+
+.montaggio h5 {
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.5rem;
+    padding: 50px 20px;
 }

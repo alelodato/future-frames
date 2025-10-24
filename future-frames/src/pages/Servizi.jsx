@@ -147,12 +147,16 @@ export default function Servizi() {
         </div>
         <div className={styles.montaggio}>
           <div className={styles.gradient}>
-            <h3>Dove le immagini trovano ritmo, senso e impatto.</h3>
-            <p>
-              Post-produzione e editing professionale per: spot pubblicitari
-              videoclip musicali documentari cinematografici e televisivi
-              progetti cinematografici
-            </p>
+            <h3>
+              Dove le immagini trovano <strong> RITMO </strong>,{" "}
+              <strong> SENSO </strong> e <strong> IMPATTO </strong>.
+            </h3>
+            <h4>POST-PRODUZIONE E EDITING PROFESSIONALE PER:</h4>
+            <h5>Spot Pubblicitari</h5>
+            <h5>Videoclip Musicali</h5>
+            <h5>
+              Documentari Cinematografici, Televisivi, e Progetti Cinematografici
+            </h5>
           </div>
         </div>
       </section>
