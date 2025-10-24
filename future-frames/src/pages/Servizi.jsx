@@ -62,14 +62,20 @@ export default function Servizi() {
               Raccontiamo la tua azienda con immagini che non si limitano a
               mostrare, ma comunicano <strong>VALORE</strong>.
             </h4>
-            <img src="/images/azienda.webp" alt="immagine-sezione-aziende" className={styles.imgAziende} />
+            <img
+              src="/images/azienda.webp"
+              alt="immagine-sezione-aziende"
+              className={styles.imgAziende}
+            />
             <p className={styles.aziendep}>
               {" "}
-              Dai ritratti corporate ai video istituzionali, fino agli
-              spot pubblicitari e ai contenuti social, ogni progetto è studiato
-              per valorizzare la tua identità e distinguerti sul mercato.
+              Dai ritratti corporate ai video istituzionali, fino agli spot
+              pubblicitari e ai contenuti social, ogni progetto è studiato per
+              valorizzare la tua identità e distinguerti sul mercato.
             </p>
-            <h4 className={styles.aziendeTitle3}>COSA POSSIAMO REALIZZARE PER TE:</h4>
+            <h4 className={styles.aziendeTitle3}>
+              COSA POSSIAMO REALIZZARE PER TE:
+            </h4>
             <h5 className={styles.istituzionali}>
               Video istituzionali e corporate: per presentare l'azienda, i
               valori e le persone dietro al brand.
@@ -94,19 +100,32 @@ export default function Servizi() {
               Shooting prodotto/servizio: still-life e foto ambientate per
               cataloghi, e-commerce e materiale promozionale.
             </h5>
-            <img src="" alt="" className={styles.imgAziende2}/>
+            <img src="" alt="" className={styles.imgAziende2} />
           </div>
         </div>
         <div className={styles.cerimonie}>
           <div className={styles.gradient}>
-            <h3>
-              I momenti più importanti meritano di essere ricordati per sempre,
-              con emozioni vere e spontanee.
+            <h3 className={styles.cerimonieTitle}>
+              I momenti <br /> <strong> PIÙ IMPORTANTI </strong> meritano di
+              essere ricordati <br /> <strong> PER SEMPRE</strong>, con{" "}
+              <strong> EMOZIONI</strong> vere e spontanee.
             </h3>
+            <div className={styles.imgCerimonie}>
+              <img src="/images/sfondo.jpg" alt="immagine-cerimonie" />
+              <img src="/images/introimg5.webp" alt="immagine-cerimonie2" />
+            </div>
+            <h4 className={styles.cerimonieTitle2}>
+              SERVIZI FOTO E VIDEO PER:
+            </h4>{" "}
+            <div className={styles.cerimonie2}>
+              <h5 className={styles.matrimoni}>MATRIMONI</h5>{" "}
+              <h5 className={styles.anniversari}>ANNIVERSARI DI MATRIMONIO</h5>
+              <h5 className={styles.battesimi}>BATTESIMI</h5>{" "}
+              <h5 className={styles.diciottesimi}>DICIOTTESIMI</h5>
+            </div>{" "}
             <p>
-              Servizi foto e video per: matrimoni, battesimi, 18esimi,
-              anniversari di matrimonio Stile elegante, reportage naturale,
-              attenzione ai dettagli e ai momenti autentici.
+              Seguendo uno stile elegante, reportage naturale, attenzione ai
+              dettagli e ai momenti autentici.
             </p>
           </div>
         </div>

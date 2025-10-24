@@ -28,11 +28,6 @@
     margin: 0;
 }
 
-.servizi h3 {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-}
-
 .eventi h3,
 .aziende h3,
 .cerimonie h3,
@@ -184,6 +179,109 @@ h3 strong {
 .cerimonie {
     background: url(/images/sfondo.jpg)no-repeat center center/cover;
 }
+
+.cerimonieTitle {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2.5rem;
+    padding-top: 50px !important;
+}
+
+.cerimonieTitle strong {
+    font-family: "Poppins", sans-serif;
+}
+
+.imgCerimonie {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    gap: 0;
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    padding: 0 10px;
+    margin: 40px auto 0;
+    box-sizing: border-box;
+}
+
+.imgCerimonie img {
+    display: block;
+    width: 70%;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    transition: transform .28s ease, box-shadow .28s ease;
+    background-color: #111;
+}
+
+.imgCerimonie img:first-child {
+    position: relative;
+    z-index: 1;
+    transform-origin: center;
+    align-self: flex-start;
+}
+
+.imgCerimonie img:last-child {
+    position: relative;
+    z-index: 2;
+    margin-top: -100px;
+    align-self: flex-end;
+    width: 70%;
+}
+
+.imgCerimonie img:hover,
+.imgCerimonie img:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.48);
+    outline: none;
+}
+
+.cerimonie p {
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.2rem;
+    padding: 20px 20px 100px 20px;
+}
+
+.cerimonieTitle2 {
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    padding: 100px 10px 50px 10px !important;
+}
+
+.cerimonie2 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 1.7rem;
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+}
+
+.matrimoni {
+    text-align: right;
+    font-size: 2.5rem;
+}
+
+.anniversari {
+    text-align: right;
+}
+
+.battesimi {
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+.diciottesimi {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
 
 .food {
     background: url(/images/introimg6.webp)no-repeat center center/cover;
