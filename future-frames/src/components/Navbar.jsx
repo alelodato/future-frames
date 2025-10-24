@@ -6,7 +6,7 @@ const LINKS = [
   { to: "/about", label: "CHI SIAMO" },
   { to: "/portfolio", label: "PORTFOLIO" },
   { to: "/servizi",  label: "SERVIZI" },
-  { to: "/contact", label: "CONTATTI" },
+  { to: "/contact", label: "CONTATTACI" },
 ];
 
 export default function Navbar() {
