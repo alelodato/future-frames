@@ -59,8 +59,8 @@ export default function Contact() {
     setStatus(null);
 
     const templateParams = {
-      name: nameTrim,
-      email: emailTrim,
+      from_name: nameTrim,
+      from_email: emailTrim,
       phone: phoneTrim,
       message: messageTrim,
     };

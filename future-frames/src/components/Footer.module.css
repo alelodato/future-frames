@@ -1,0 +1,32 @@
+.footer {
+    background: radial-gradient(ellipse at center, #a020f045 0%, #000000 70%);
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.footerTitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0;
+    padding: 20px 20px 0 20px;
+}
+
+.footerSubtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    letter-spacing: 1.2px;
+    font-size: .9rem;
+    color: #fff;
+    margin: 0;
+    padding: 10px 20px 20px 20px;
+}
+
+.footerSubtitle strong {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}

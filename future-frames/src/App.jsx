@@ -1,5 +1,6 @@
 import "./styles/global.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -22,6 +23,7 @@ export default function App() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }

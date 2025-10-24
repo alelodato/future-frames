@@ -354,6 +354,10 @@ figcaption {
     margin-bottom: 100px;
 }
 
+.aboutLink p {
+    padding-bottom: 100px;
+}
+
 /* Medium screens: più spazio e layout misto */
 @media (min-width: 680px) {
     .intro1 {
