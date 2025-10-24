@@ -1,4 +1,5 @@
 import styles from "./Servizi.module.css";
+import aziendeVideo from "../assets/videos/ToyotaXReply.mp4";
 
 export default function Servizi() {
   return (
@@ -26,7 +27,9 @@ export default function Servizi() {
               <strong>IMMAGINI</strong> che coinvolgono e restano.
             </h4>
             <div className={styles.eventip}>
-              <h5 className={styles.eventip1}>Fotografia e video per eventi privati e aziendali.</h5>
+              <h5 className={styles.eventip1}>
+                Fotografia e video per eventi privati e aziendali.
+              </h5>
               <h5 className={styles.eventip2}>
                 Copertura completa con scatti spontanei e riprese dinamiche.
               </h5>
@@ -39,41 +42,59 @@ export default function Servizi() {
         </div>
         <div className={styles.aziende}>
           <div className={styles.gradient}>
-            <h3>
-              CONTENUTI VISIVI SU MISURA CHE RAFFORZANO L'IDENTITÀ DEL TUO BRAND
-              E PARLANO DIRETTAMENTE AL TUO PUBBLICO.
+            <h3 className={styles.aziendeTitle}>
+              CONTENUTI VISIVI <br /> <strong>SU MISURA</strong> CHE RAFFORZANO
+              L'<strong>IDENTITÀ</strong> DEL TUO BRAND <br />
             </h3>
+            <video
+              className={styles.aziendeVideo}
+              src={aziendeVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+            ></video>
+            <h3 className={styles.aziendeTitle2}>
+              E <strong>PARLANO</strong> DIRETTAMENTE AL TUO PUBBLICO.
+            </h3>
+
             <h4>
               Raccontiamo la tua azienda con immagini che non si limitano a
-              mostrare, ma comunicano valore.
+              mostrare, ma comunicano <strong>VALORE</strong>.
             </h4>
+            <img src="/images/azienda.webp" alt="immagine-sezione-aziende" className={styles.imgAziende} />
             <p className={styles.aziendep}>
               {" "}
               Dai ritratti corporate ai video istituzionali, fino agli
-              spotpubblicitari e ai contenuti social, ogni progetto è studiato
+              spot pubblicitari e ai contenuti social, ogni progetto è studiato
               per valorizzare la tua identità e distinguerti sul mercato.
             </p>
-            <h4>Cosa possiamo realizzare per te:</h4>
+            <h4 className={styles.aziendeTitle3}>COSA POSSIAMO REALIZZARE PER TE:</h4>
             <h5 className={styles.istituzionali}>
               Video istituzionali e corporate: per presentare l'azienda, i
               valori e le persone dietro al brand.
             </h5>
+            <img src="" alt="" />
             <h5 className={styles.spot}>
               Spot pubblicitari e social video: contenuti brevi e di impatto per
               campagne e distribuzione digitale.
             </h5>
+            <img src="" alt="" />
             <h5 className={styles.ritratti}>
               Ritratti e fotografia aziendale: immagini professionali di team,
               sedi, prodotti e processi.
             </h5>
+            <img src="" alt="" />
             <h5 className={styles.branding}>
               Contenuti per employer branding: video e foto che raccontano la
               cultura aziendale e attraggono talenti.
             </h5>
+            <img src="" alt="" />
             <h5 className={styles.shooting}>
               Shooting prodotto/servizio: still-life e foto ambientate per
               cataloghi, e-commerce e materiale promozionale.
             </h5>
+            <img src="" alt="" className={styles.imgAziende2}/>
           </div>
         </div>
         <div className={styles.cerimonie}>
@@ -83,9 +104,9 @@ export default function Servizi() {
               con emozioni vere e spontanee.
             </h3>
             <p>
-              Servizi foto e video per: matrimoni, battesimi, 18esimi, anniversari
-              di matrimonio Stile elegante, reportage naturale, attenzione ai
-              dettagli e ai momenti autentici.
+              Servizi foto e video per: matrimoni, battesimi, 18esimi,
+              anniversari di matrimonio Stile elegante, reportage naturale,
+              attenzione ai dettagli e ai momenti autentici.
             </p>
           </div>
         </div>

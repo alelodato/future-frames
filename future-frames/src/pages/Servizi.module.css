@@ -129,9 +129,56 @@ h3 strong {
     font-size: 2rem;
 }
 
+.aziendeTitle {
+    text-align: right;
+}
+
+.aziendeTitle2 {
+    text-align: left;
+    font-size: 1.7 !important;
+}
+
+.aziendeVideo {
+    position: relative;
+    width: 100%;
+}
+
+.aziende h4 {
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 1.3rem;
+}
+
+.aziende h4 strong {
+    text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+}
+
+.aziendeTitle3 {
+    padding: 100px 20px 50px 20px !important;
+    font-size: 1.5rem !important;
+    font-family: "Poppins", sans-serif;
+
+}
+
 .aziende h5 {
-    padding: 20px;
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 1.2rem;
+    padding: 100px 20px;
     margin: 0;
+}
+
+.imgAziende {
+    width: 100%;
+    padding: 10px;
+}
+
+.imgAziende2 {
+    padding-bottom: 100px;
 }
 
 .cerimonie {
