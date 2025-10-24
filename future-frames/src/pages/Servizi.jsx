@@ -132,14 +132,17 @@ export default function Servizi() {
         <div className={styles.food}>
           <div className={styles.gradient}>
             <h3>
-              Ogni piatto diventa un'immagine che conquista lo sguardo e
-              racconta la tua cucina.
+              Ogni piatto diventa un'immagine che <strong> CONQUISTA </strong>{" "}
+              lo sguardo e<strong> RACCONTA </strong> la tua cucina.
             </h3>
-            <p>
+            <h5>
               Shooting fotografico e video per ristoranti, chef e aziende del
-              settore. Immagini per menu, social, campagne pubblicitarie.
+              settore.
+            </h5>
+            <h5>Immagini per menu, social, campagne pubblicitarie.</h5>
+            <h5>
               Riprese video con focus su estetica e storytelling del piatto.
-            </p>
+            </h5>
           </div>
         </div>
         <div className={styles.montaggio}>

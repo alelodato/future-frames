@@ -287,6 +287,28 @@ h3 strong {
     background: url(/images/introimg6.webp)no-repeat center center/cover;
 }
 
+.food h3 {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    font-family: "Whisper", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+
+.food strong {
+    font-family: "Poppins", sans-serif;
+}
+
+.food h5 {
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.5rem;
+        padding: 50px 10px 100px 10px;
+}
+
 .montaggio {
     background: url(/images/montaggio.webp)no-repeat center center/cover;
 }
