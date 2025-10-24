@@ -1,8 +1,6 @@
 .footer {
     background: radial-gradient(ellipse at center, #a020f045 0%, #000000 70%);
     width: 100%;
-    position: absolute;
-    z-index: 100;
 }
 
 .footerTitle {
