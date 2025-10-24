@@ -1,0 +1,144 @@
+:root {
+  --bg: #0b0b0b;
+  --card: rgba(18, 18, 20, 0.6);
+  --accent: #9a00ff;
+  --muted: rgba(255, 255, 255, 0.65);
+  --radius: 12px;
+}
+
+.wrap {
+  background: url(/images/Purple.jpg) no-repeat center center/cover;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.contactSection {
+  background: linear-gradient(180deg, #111111ed, rgb(0 0 0 / 82%));
+  width: 100%;
+  max-width: 880px;
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  margin-top: 100px;
+}
+
+.contactSection h2 {
+  font-family: "Orbitron", sans-serif;
+  margin: 0 0 16px;
+  font-size: 1.75rem;
+  letter-spacing: 0.6px;
+  color: #fff;
+}
+
+/* form layout */
+.form {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* each field */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* label text */
+.field>span {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 350;
+  letter-spacing: 0.4px;
+}
+
+/* inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  background: var(--card);
+  color: #fff;
+  border: 1px solid rgb(160 32 240);
+  box-shadow: 0 0 0px var(--white), 0 0 0px rgb(160 32 240), 0 0 22px rgb(160 32 240 / 43%);
+  padding: 12px 14px;
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow .18s ease, border-color .18s ease, transform .12s ease;
+  font-size: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(154, 0, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+/* small helper / error text */
+.error {
+  color: var(--error);
+  font-size: 0.86rem;
+  margin-top: 4px;
+}
+
+/* actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+/* primary button */
+.actions button {
+  background: linear-gradient(180deg, var(--accent), #6a00c6);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(106, 0, 198, 0.18);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+/* disabled state */
+.actions button[disabled],
+.actions button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* success / error messages after submit */
+.success {
+  margin-top: 20px;
+  color: var(--success);
+  font-weight: 300;
+}
+
+.form .error-msg,
+.errorState {
+  margin-top: 20px;
+  color: var(--error);
+  font-weight: 300;
+}

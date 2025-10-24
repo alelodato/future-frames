@@ -33,7 +33,6 @@
     position: relative;
     width: 100%;
     background: url(/images/NeonWall2.jpeg)no-repeat center center/cover;
-    /* background: radial-gradient(ellipse at center, #ab2ea642 0%, #ab2ea661 55%, rgba(0, 0, 0, 1) 100%); */
     color: #ffffff;
     box-sizing: border-box;
     z-index: 2;
