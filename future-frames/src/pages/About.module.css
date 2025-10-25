@@ -142,6 +142,7 @@
 }
 
 .missionValues {
+    background: url(/images/NeonWall2.jpeg)no-repeat center center/cover;
     display: flex;
     flex-direction: column;
 }
@@ -184,15 +185,6 @@
     font-family: "Oxanium", sans-serif !important;
 }
 
-.mission {
-    background: url(/images/sfondo.jpg)no-repeat center center/cover;
-}
-
-.values {
-    background: url(/images/NeonWall2.jpeg)no-repeat center center/cover;
-    /*box-shadow: 0 0 6px 0px var(--white), 0 0 10px 10px rgb(160 32 240 / 39%), inset 0 0 20px 2px rgb(160 32 240 / 47%);*/
-    z-index: 2;
-}
 
 .creativita {
     font-size: 2.3rem;

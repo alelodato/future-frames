@@ -55,9 +55,9 @@
     margin: 0;
 }
 
-.eventi {
+/*.eventi {
     background: url(/images/eventi.webp)no-repeat center center/cover;
-}
+}*/
 
 .eventi h3 {
     font-family: "Oxanium", sans-serif;
@@ -113,10 +113,10 @@ h3 strong {
     font-weight: 200;
 }
 
-.aziende {
+/*.aziende {
     background: url(/images/azienda.webp)no-repeat center center/cover;
     contain: content;
-}
+}*/
 
 .aziende h3 {
     font-family: "Oxanium", sans-serif;
@@ -176,9 +176,9 @@ h3 strong {
     padding-bottom: 100px;
 }
 
-.cerimonie {
+/*.cerimonie {
     background: url(/images/sfondo.jpg)no-repeat center center/cover;
-}
+}*/
 
 .cerimonieTitle {
     font-family: "Ephesis", cursive;
@@ -283,9 +283,9 @@ h3 strong {
 }
 
 
-.food {
+/*.food {
     background: url(/images/introimg6.webp)no-repeat center center/cover;
-}
+}*/
 
 .food h3 {
     padding-top: 50px;
@@ -309,9 +309,9 @@ h3 strong {
     padding: 50px 10px 100px 10px;
 }
 
-.montaggio {
+/*.montaggio {
     background: url(/images/montaggio.webp)no-repeat center center/cover;
-}
+}*/
 
 .montaggio h3 {
     font-family: "Orbitron", sans-serif;
