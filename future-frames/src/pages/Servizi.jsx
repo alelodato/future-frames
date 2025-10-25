@@ -5,7 +5,7 @@ export default function Servizi() {
   return (
     <section>
       <div className={styles.wrap}>
-        <div className={styles.gradient}>
+        <div className={styles.introGradient}>
           <div className={styles.intro}>
             <p className={styles.introP2}>
               Con<strong> CREATIVITA'</strong>,

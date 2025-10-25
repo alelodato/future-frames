@@ -6,6 +6,10 @@
     height: 100vh;
 }
 
+.introGradient {
+    background: radial-gradient(rgba(0, 0, 0, 0.7));
+}
+
 .gradient {
     background: radial-gradient(rgba(0, 0, 0, 0.7));
 }
@@ -338,4 +342,15 @@ h3 strong {
     font-size: 1.5rem;
     padding: 50px 20px;
     margin-bottom: 0;
+}
+
+
+@media (min-width: 1024px) {
+
+    .introGradient {
+        background: radial-gradient(rgb(0 0 0 / 0%));
+    }
+    .intro {
+        padding: 150px 450px;
+    }
 }

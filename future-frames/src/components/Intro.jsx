@@ -220,45 +220,55 @@ export default function Intro() {
             </p>
           </div>
           <div className={styles.intro2Desktop}>
-            <div className={`${styles.cell} ${styles.cell1}`}>
-              <div className={styles.intro1Gradient}>
-                <h3>Eventi</h3>
-                <p>Fotografia e video per eventi privati e aziendali.</p>
+            <Link to="/servizi#eventi">
+              <div className={`${styles.cell} ${styles.cell1}`}>
+                <div className={styles.intro1Gradient}>
+                  <h3>Eventi</h3>
+                  <p>Fotografia e video per eventi privati e aziendali.</p>
+                </div>
               </div>
-            </div>
-            <div className={`${styles.cell} ${styles.cell2}`}>
-              <div className={styles.intro1Gradient}>
-                <h3>Aziende</h3>
-                <p>
-                  Raccontiamo la tua azienda con immagini che non si limitano
-                  mostrare, ma comunicano valore.
-                </p>
+            </Link>
+            <Link to="/servizi#aziende">
+              <div className={`${styles.cell} ${styles.cell2}`}>
+                <div className={styles.intro1Gradient}>
+                  <h3>Aziende</h3>
+                  <p>
+                    Raccontiamo la tua azienda con immagini che non si limitano
+                    mostrare, ma comunicano valore.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className={`${styles.cell} ${styles.cell3}`}>
-              <div className={styles.intro1Gradient}>
-                <h3>Cerimonie</h3>
-                <p>
-                  Servizi foto e video per: matrimoni, battesimi, 18esimi e
-                  anniversari.
-                </p>
+            </Link>
+            <Link to="/servizi#cerimonie">
+              <div className={`${styles.cell} ${styles.cell3}`}>
+                <div className={styles.intro1Gradient}>
+                  <h3>Cerimonie</h3>
+                  <p>
+                    Servizi foto e video per: matrimoni, battesimi, 18esimi e
+                    anniversari.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className={`${styles.cell} ${styles.cell4}`}>
-              <div className={styles.intro1Gradient}>
-                <h3>Food</h3>
-                <p>
-                  Shooting fotografico e video per ristoranti, chef e aziende
-                  del settore.
-                </p>
+            </Link>
+            <Link to="/servizi#food">
+              <div className={`${styles.cell} ${styles.cell4}`}>
+                <div className={styles.intro1Gradient}>
+                  <h3>Food</h3>
+                  <p>
+                    Shooting fotografico e video per ristoranti, chef e aziende
+                    del settore.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className={`${styles.cell} ${styles.cell5}`}>
-              <div className={styles.intro1Gradient}>
-                <h3>Montaggio</h3>
-                <p>Servizio di Post-produzione e editing professionale.</p>
+            </Link>
+            <Link to="/servizi#montaggio">
+              <div className={`${styles.cell} ${styles.cell5}`}>
+                <div className={styles.intro1Gradient}>
+                  <h3>Montaggio</h3>
+                  <p>Servizio di Post-produzione e editing professionale.</p>
+                </div>
               </div>
-            </div>
+            </Link>
             <div className={`${styles.cell} ${styles.cell6}`}>
               <video
                 className={styles.video}
@@ -391,10 +401,10 @@ export default function Intro() {
               Frames, fotografa e videomaker.
             </h5>
             <Link to="/about">
-            <div className={styles.aboutImg}>
-              <img src="/images/gloria2.jpeg" alt="immagine-gloria" />
-              <img src="/images/ivan.jpeg" alt="immagine-ivan" />
-            </div>
+              <div className={styles.aboutImg}>
+                <img src="/images/gloria2.jpeg" alt="immagine-gloria" />
+                <img src="/images/ivan.jpeg" alt="immagine-ivan" />
+              </div>
             </Link>
             <h5 className={styles.ivanTitle}>
               <strong>Ivan Scrofani</strong> <br /> Co-founder di Future Frames
