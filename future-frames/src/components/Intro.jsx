@@ -32,6 +32,8 @@ export default function Intro() {
     },
   ];
 
+  const slideHashes = ["eventi", "aziende", "cerimonie", "food", "montaggio"];
+
   const [index, setIndex] = useState(0);
   const carouselRef = useRef(null);
   const trackRef = useRef(null);
@@ -287,7 +289,7 @@ export default function Intro() {
             <span className={styles.glow}> restano nel tempo.</span>
           </p>{" "}
           <br />
-          <Link to="/portfolio" className={styles.portfolioLink}>
+          <Link to="/portfolio" className={styles.portfolioLink2}>
             <p>
               Scopri il nostro portfolio{" "}
               <i className="fa-solid fa-circle-arrow-right"></i>
@@ -300,8 +302,10 @@ export default function Intro() {
 
             <div className={styles.intro3}>
               <Link
-                to="/servizi"
-                aria-label="Vai alla pagina dei servizi"
+                to={`/servizi#${slideHashes[index] || ""}`}
+                aria-label={`Vai alla sezione ${
+                  slides[index]?.title || "Servizi"
+                }`}
                 onClick={onCarouselLinkClick}
               >
                 <div

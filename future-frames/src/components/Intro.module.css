@@ -171,6 +171,14 @@
     max-width: 720px;
 }
 
+.bottomp {
+    display: none;
+}
+
+.portfolioLink2 {
+    display: none;
+}
+
 .carousel {
     position: relative;
     touch-action: pan-y;
@@ -577,7 +585,7 @@ figcaption {
         margin: 0;
     }
 
-    .portfolioLink {
+    .portfolioLink2 {
         margin: 0;
         text-align: right;
     }

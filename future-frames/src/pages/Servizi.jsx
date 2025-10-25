@@ -1,7 +1,21 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./Servizi.module.css";
 import aziendeVideo from "../assets/videos/ToyotaXReply.mp4";
 
+
 export default function Servizi() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if(location.hash) {
+      const section = document.querySelector(location.hash);
+      if(section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
     <section>
       <div className={styles.wrap}>
@@ -17,7 +31,7 @@ export default function Servizi() {
         </div>
       </div>
       <section className={styles.servizi}>
-        <div className={styles.eventi}>
+        <div className={styles.eventi} id="eventi">
           <div className={styles.gradient}>
             <h3>
               DAL <strong>BACKSTAGE</strong> AL <strong>MOMENTO</strong> CLOU:
@@ -40,7 +54,7 @@ export default function Servizi() {
             </div>
           </div>
         </div>
-        <div className={styles.aziende}>
+        <div className={styles.aziende} id="aziende">
           <div className={styles.gradient}>
             <h3 className={styles.aziendeTitle}>
               CONTENUTI VISIVI <br /> <strong>SU MISURA</strong> CHE RAFFORZANO
@@ -103,7 +117,7 @@ export default function Servizi() {
             <img src="" alt="" className={styles.imgAziende2} />
           </div>
         </div>
-        <div className={styles.cerimonie}>
+        <div className={styles.cerimonie} id="cerimonie">
           <div className={styles.gradient}>
             <h3 className={styles.cerimonieTitle}>
               I momenti <br /> <strong> PIÙ IMPORTANTI </strong> meritano di
@@ -129,7 +143,7 @@ export default function Servizi() {
             </p>
           </div>
         </div>
-        <div className={styles.food}>
+        <div className={styles.food} id="food">
           <div className={styles.gradient}>
             <h3>
               Ogni piatto diventa un'immagine che <strong> CONQUISTA </strong>{" "}
@@ -145,7 +159,7 @@ export default function Servizi() {
             </h5>
           </div>
         </div>
-        <div className={styles.montaggio}>
+        <div className={styles.montaggio} id="montaggio">
           <div className={styles.gradient}>
             <h3>
               Dove le immagini trovano <strong> RITMO </strong>,{" "}
