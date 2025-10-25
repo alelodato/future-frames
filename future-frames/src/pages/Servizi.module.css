@@ -28,6 +28,11 @@
     margin: 0;
 }
 
+.servizi {
+    background: radial-gradient(ellipse at center, #a020f045 0%, #000000 70%);
+    width: 100%;
+}
+
 .eventi h3,
 .aziende h3,
 .cerimonie h3,
@@ -307,6 +312,7 @@ h3 strong {
     font-style: normal;
     font-size: 1.5rem;
     padding: 50px 10px 100px 10px;
+    margin: 0;
 }
 
 /*.montaggio {
