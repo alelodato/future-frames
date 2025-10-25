@@ -214,10 +214,10 @@ export default function Intro() {
               con immagini che comunicano e
               <span className={styles.glow}> restano nel tempo.</span>
               <Link to="/portfolio" className={styles.portfolioLink}>
-                <p>
+                <span>
                   Scopri il nostro portfolio{" "}
                   <i className="fa-solid fa-circle-arrow-right"></i>
-                </p>
+                </span>
               </Link>
             </p>
           </div>

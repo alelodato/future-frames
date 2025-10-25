@@ -126,6 +126,11 @@
 }
 
 @media (min-width: 1024px) {
+
+  .title {
+    font-size: 3.5rem;
+  }
+  
   .content {
     margin-top: 150px;
   }
