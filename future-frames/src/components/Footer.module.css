@@ -3,6 +3,10 @@
     width: 100%;
 }
 
+.footer:hover {
+    background: radial-gradient(ellipse at right, #a020f03d 0%, #00000000 70%);
+}
+
 .footerTitle {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Intro.module.css";
+import videoBg from "../assets/videos/ShowreelAgg.2025.mp4";
 
 export default function Intro() {
   const slides = [
@@ -62,7 +63,7 @@ export default function Intro() {
     const track = trackRef.current;
     if (track) {
       track.style.transition = "";
-      track.style.transform = `translateX(${ -index * 100 }%)`;
+      track.style.transform = `translateX(${-index * 100}%)`;
     }
   }, [index]);
 
@@ -80,7 +81,9 @@ export default function Intro() {
       deltaXRef.current = 0;
       preventClickRef.current = false;
       if (el.setPointerCapture) {
-        try { el.setPointerCapture(e.pointerId); } catch {}
+        try {
+          el.setPointerCapture(e.pointerId);
+        } catch {}
       }
       el.classList.add(styles.dragging);
       // temporarily disable transition for immediate feedback
@@ -103,14 +106,16 @@ export default function Intro() {
       }
       deltaXRef.current = dx;
       if (Math.abs(rawDx) > CLICK_THRESHOLD) preventClickRef.current = true;
-      track.style.transform = `translateX(calc(${ -index * 100 }% + ${dx}px))`;
+      track.style.transform = `translateX(calc(${-index * 100}% + ${dx}px))`;
     }
 
     function onPointerUp(e) {
       if (!draggingRef.current) return;
       draggingRef.current = false;
       const dx = deltaXRef.current;
-      try { if (el.releasePointerCapture) el.releasePointerCapture(e.pointerId); } catch {}
+      try {
+        if (el.releasePointerCapture) el.releasePointerCapture(e.pointerId);
+      } catch {}
       // restore transition and decide snap/slide
       track.style.transition = "";
       if (Math.abs(dx) >= THRESHOLD) {
@@ -118,11 +123,11 @@ export default function Intro() {
         else if (dx > 0 && index > 0) prev();
         else {
           // if at bounds, snap back
-          track.style.transform = `translateX(${ -index * 100 }%)`;
+          track.style.transform = `translateX(${-index * 100}%)`;
         }
       } else {
         // snap back
-        track.style.transform = `translateX(${ -index * 100 }%)`;
+        track.style.transform = `translateX(${-index * 100}%)`;
       }
       deltaXRef.current = 0;
       setTimeout(() => el.classList.remove(styles.dragging), 50);
@@ -134,9 +139,15 @@ export default function Intro() {
     window.addEventListener("pointerup", onPointerUp);
 
     // touch fallback for older UAs (map to same handlers)
-    function touchStart(e) { onPointerDown(e.changedTouches ? e.changedTouches[0] : e); }
-    function touchMove(e) { onPointerMove(e.changedTouches ? e.changedTouches[0] : e); }
-    function touchEnd(e) { onPointerUp(e.changedTouches ? e.changedTouches[0] : e); }
+    function touchStart(e) {
+      onPointerDown(e.changedTouches ? e.changedTouches[0] : e);
+    }
+    function touchMove(e) {
+      onPointerMove(e.changedTouches ? e.changedTouches[0] : e);
+    }
+    function touchEnd(e) {
+      onPointerUp(e.changedTouches ? e.changedTouches[0] : e);
+    }
     el.addEventListener("touchstart", touchStart, { passive: true });
     window.addEventListener("touchmove", touchMove, { passive: true });
     window.addEventListener("touchend", touchEnd, { passive: true });
@@ -171,20 +182,26 @@ export default function Intro() {
       <div className={styles.gradient}>
         <div className={`container ${styles.inner}`}>
           <div className={styles.intro1}>
-            <p className={styles.line}>
-              <strong className={styles.glow}>Future Frames</strong> è
-              un'agenzia creativa specializzata in
-              <span className={styles.glow}> fotografia</span> e
-              <span className={styles.glow}> videomaking </span> professionale.
-            </p>
-            <span className={styles.intro1img}>
-              <img src="/images/introimg3.webp" alt="" />
-              <img src="/images/introimg4.webp" alt="" />
-              <img src="/images/introimg5.webp" alt="" />
-              <img src="/images/introimg6.webp" alt="" />
-            </span>
+            <div className={styles.intro1Gradient}>
+              <p
+                className={styles.line}
+                data-aos="zoom-in"
+                data-aos-delay="500"
+              >
+                <strong className={styles.glow}>Future Frames</strong> è
+                un'agenzia creativa specializzata in
+                <span className={styles.glow}> fotografia</span> e
+                <span className={styles.glow}> videomaking </span>{" "}
+                professionale.
+              </p>
+              <span className={styles.intro1img}>
+                <img src="/images/introimg3.webp" alt="" />
+                <img src="/images/introimg4.webp" alt="" />
+                <img src="/images/introimg5.webp" alt="" />
+                <img src="/images/introimg6.webp" alt="" />
+              </span>
+            </div>
           </div>
-
           <div className={styles.intro2}>
             <p className={styles.line}>
               Diamo forma ai tuoi momenti e alla tua
@@ -202,92 +219,172 @@ export default function Intro() {
               </Link>
             </p>
           </div>
-
-          <div className={styles.intro3title}>
-            <h3>I NOSTRI SERVIZI</h3>
-          </div>
-
-          <div className={styles.intro3}>
-            <Link to="/servizi" aria-label="Vai alla pagina dei servizi" onClick={onCarouselLinkClick}>
-              <div
-                className={styles.carousel}
-                ref={carouselRef}
-                aria-roledescription="carousel"
-              >
-                <div className={styles.carouselViewport}>
-                  <div
-                    className={styles.track}
-                    ref={trackRef}
-                    style={{ transform: `translateX(${ -index * 100 }%)` }}
-                  >
-                    {slides.map((s, i) => (
-                      <figure
-                        key={i}
-                        className={styles.slide}
-                        role="group"
-                        aria-roledescription="slide"
-                        aria-label={`${i + 1} di ${slides.length}`}
-                        style={{
-                          backgroundImage: `url(${s.img})`,
-                        }}
-                      >
-                        <div className={styles.carouselGradient}>
-                          <div className={styles.carouselTxt}>
-                            <span className={styles.visuallyHidden} aria-hidden="false">
-                              {s.title}
-                            </span>
-                            <figcaption className={styles.slideCaption}>
-                              <p className={styles.slideText}>{s.text}</p>
-                            </figcaption>
-                          </div>
-                        </div>
-                      </figure>
-                    ))}
-                  </div>
-                </div>
+          <div className={styles.intro2Desktop}>
+            <div className={`${styles.cell} ${styles.cell1}`}>
+              <div className={styles.intro1Gradient}>
+                <h3>Eventi</h3>
+                <p>Fotografia e video per eventi privati e aziendali.</p>
               </div>
-            </Link>
-          </div>
-
-          <div className={styles.carouselBtn}>
-            <button
-              className={`${styles.arrow} ${index === 0 ? styles.arrowDisabled : ""}`}
-              onClick={prev}
-              aria-label="Slide precedente"
-              aria-disabled={index === 0}
-              disabled={index === 0}
-            >
-              ‹
-            </button>
-            <button
-              className={`${styles.arrow} ${styles.arrowRight} ${index === slides.length - 1 ? styles.arrowDisabled : ""}`}
-              onClick={next}
-              aria-label="Slide successivo"
-              aria-disabled={index === slides.length - 1}
-              disabled={index === slides.length - 1}
-            >
-              ›
-            </button>
-
-            <div className={styles.indicators} role="tablist" aria-label="Seleziona slide">
-              {slides.map((_, i) => (
-                <button
-                  key={i}
-                  className={`${styles.indicator} ${i === index ? styles.activeIndicator : ""}`}
-                  onClick={() => goTo(i)}
-                  aria-label={`Vai alla slide ${i + 1}`}
-                  aria-pressed={i === index}
-                />
-              ))}
+            </div>
+            <div className={`${styles.cell} ${styles.cell2}`}>
+              <div className={styles.intro1Gradient}>
+                <h3>Aziende</h3>
+                <p>
+                  Raccontiamo la tua azienda con immagini che non si limitano
+                  mostrare, ma comunicano valore.
+                </p>
+              </div>
+            </div>
+            <div className={`${styles.cell} ${styles.cell3}`}>
+              <div className={styles.intro1Gradient}>
+                <h3>Cerimonie</h3>
+                <p>
+                  Servizi foto e video per: matrimoni, battesimi, 18esimi e
+                  anniversari.
+                </p>
+              </div>
+            </div>
+            <div className={`${styles.cell} ${styles.cell4}`}>
+              <div className={styles.intro1Gradient}>
+                <h3>Food</h3>
+                <p>
+                  Shooting fotografico e video per ristoranti, chef e aziende
+                  del settore.
+                </p>
+              </div>
+            </div>
+            <div className={`${styles.cell} ${styles.cell5}`}>
+              <div className={styles.intro1Gradient}>
+                <h3>Montaggio</h3>
+                <p>Servizio di Post-produzione e editing professionale.</p>
+              </div>
+            </div>
+            <div className={`${styles.cell} ${styles.cell6}`}>
+              <video
+                className={styles.video}
+                src={videoBg}
+                autoPlay
+                loop
+                muted
+                playsInline
+              ></video>
             </div>
           </div>
+          <p className={styles.bottomp}>
+            Diamo forma ai tuoi momenti e alla tua
+            <span className={styles.glow}> identitá </span>
+            con immagini che comunicano e
+            <span className={styles.glow}> restano nel tempo.</span>
+          </p>{" "}
+          <br />
+          <Link to="/portfolio" className={styles.portfolioLink}>
+            <p>
+              Scopri il nostro portfolio{" "}
+              <i className="fa-solid fa-circle-arrow-right"></i>
+            </p>
+          </Link>
+          <div className={styles.mobileLayout}>
+            <div className={styles.intro3title}>
+              <h3>I NOSTRI SERVIZI</h3>
+            </div>
 
+            <div className={styles.intro3}>
+              <Link
+                to="/servizi"
+                aria-label="Vai alla pagina dei servizi"
+                onClick={onCarouselLinkClick}
+              >
+                <div
+                  className={styles.carousel}
+                  ref={carouselRef}
+                  aria-roledescription="carousel"
+                >
+                  <div className={styles.carouselViewport}>
+                    <div
+                      className={styles.track}
+                      ref={trackRef}
+                      style={{ transform: `translateX(${-index * 100}%)` }}
+                    >
+                      {slides.map((s, i) => (
+                        <figure
+                          key={i}
+                          className={styles.slide}
+                          role="group"
+                          aria-roledescription="slide"
+                          aria-label={`${i + 1} di ${slides.length}`}
+                          style={{
+                            backgroundImage: `url(${s.img})`,
+                          }}
+                        >
+                          <div className={styles.carouselGradient}>
+                            <div className={styles.carouselTxt}>
+                              <span
+                                className={styles.visuallyHidden}
+                                aria-hidden="false"
+                              >
+                                {s.title}
+                              </span>
+                              <figcaption className={styles.slideCaption}>
+                                <p className={styles.slideText}>{s.text}</p>
+                              </figcaption>
+                            </div>
+                          </div>
+                        </figure>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className={styles.carouselBtn}>
+              <button
+                className={`${styles.arrow} ${
+                  index === 0 ? styles.arrowDisabled : ""
+                }`}
+                onClick={prev}
+                aria-label="Slide precedente"
+                aria-disabled={index === 0}
+                disabled={index === 0}
+              >
+                ‹
+              </button>
+              <button
+                className={`${styles.arrow} ${styles.arrowRight} ${
+                  index === slides.length - 1 ? styles.arrowDisabled : ""
+                }`}
+                onClick={next}
+                aria-label="Slide successivo"
+                aria-disabled={index === slides.length - 1}
+                disabled={index === slides.length - 1}
+              >
+                ›
+              </button>
+
+              <div
+                className={styles.indicators}
+                role="tablist"
+                aria-label="Seleziona slide"
+              >
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`${styles.indicator} ${
+                      i === index ? styles.activeIndicator : ""
+                    }`}
+                    onClick={() => goTo(i)}
+                    aria-label={`Vai alla slide ${i + 1}`}
+                    aria-pressed={i === index}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
           <Link to="/servizi" className={styles.serviziLink}>
             <p>
               Scopri di piú <i className="fa-solid fa-circle-arrow-right"></i>
             </p>
           </Link>
-
           <div className={styles.about}>
             <img src="/images/gloria2.jpeg" alt="immagine-gloria" />
             <img src="/images/ivan.jpeg" alt="immagine-ivan" />

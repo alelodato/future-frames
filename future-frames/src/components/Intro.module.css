@@ -96,6 +96,10 @@
     border-radius: 8px;
 }
 
+.intro2Desktop {
+    display: none;
+}
+
 /* intro2: bordo ridotto su mobile per mantenere look ma più compatto */
 .intro2 {
     font-family: "Poppins", sans-serif;
@@ -163,45 +167,45 @@
 }
 
 .slideCaption {
-  color: #fff;
-  max-width: 720px;
+    color: #fff;
+    max-width: 720px;
 }
 
-.carousel { 
-  position: relative;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
+.carousel {
+    position: relative;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .carouselViewport {
-  overflow: hidden;
-  width: 100%;
-  border-radius: 16px;
-  position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 16px;
+    position: relative;
 }
 
 .track {
-  display: flex;
-  width: 100%;
-  transition: transform 360ms cubic-bezier(.22,.9,.25,1);
-  will-change: transform;
+    display: flex;
+    width: 100%;
+    transition: transform 360ms cubic-bezier(.22, .9, .25, 1);
+    will-change: transform;
 }
 
 .dragging .track {
-  transition: none;
+    transition: none;
 }
 
 .slide {
-  flex: 0 0 100%;
-  min-width: 100%;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: flex-end;
-  box-sizing: border-box;
-  position: relative;
+    flex: 0 0 100%;
+    min-width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .carouselGradient {
@@ -245,42 +249,42 @@ figcaption {
 }
 
 .indicators {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 14px;
-  z-index: 30;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+    z-index: 30;
 }
 
 .indicator {
-  width: 30px;
-  height: 5px;
-  background: linear-gradient(180deg, rgba(231, 225, 225, 0.568), rgb(255, 255, 255));
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.02);
-  transition: transform .18s ease, background .18s ease, box-shadow .18s ease, border-color .18s ease;
-  cursor: pointer;
-  padding: 0;
-  border-radius: 10px;
+    width: 30px;
+    height: 5px;
+    background: linear-gradient(180deg, rgba(231, 225, 225, 0.568), rgb(255, 255, 255));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease, border-color .18s ease;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 10px;
 }
 
 .indicator:hover,
 .indicator:focus {
-  transform: scale(1.12);
-  outline: none;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.03);
+    transform: scale(1.12);
+    outline: none;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .activeIndicator {
-  background: linear-gradient(180deg, rgba(15,12,20,0.95), rgba(30,20,45,0.95));
-  border-color: rgba(255,255,255,0.06);
-  box-shadow: 0 8px 20px rgba(10,8,20,0.55), inset 0 -2px 6px rgba(255,255,255,0.02);
-  transform: scale(1.18);
+    background: linear-gradient(180deg, rgba(15, 12, 20, 0.95), rgba(30, 20, 45, 0.95));
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 20px rgba(10, 8, 20, 0.55), inset 0 -2px 6px rgba(255, 255, 255, 0.02);
+    transform: scale(1.18);
 }
 
 .indicator:focus-visible {
-  box-shadow: 0 0 0 4px rgba(122,0,255,0.14), 0 6px 14px rgba(0,0,0,0.25);
+    box-shadow: 0 0 0 4px rgba(122, 0, 255, 0.14), 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
 .serviziLink {
@@ -301,46 +305,46 @@ figcaption {
 }
 
 .about {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  position: relative;
-  width: 100%;
-  max-width: 760px;
-  margin: 150px auto 0 auto;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    margin: 150px auto 0 auto;
+    box-sizing: border-box;
 }
 
 .about img {
-  display: block;
-  width: 70%;
-  height: 400px;
-  object-fit: cover;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-  transition: transform .28s ease, box-shadow .28s ease;
-  background-color: #111;
+    display: block;
+    width: 70%;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    transition: transform .28s ease, box-shadow .28s ease;
+    background-color: #111;
 }
 
 .about img:first-child {
-  position: relative;
-  z-index: 1;
-  transform-origin: center;
-  align-self: flex-start;
+    position: relative;
+    z-index: 1;
+    transform-origin: center;
+    align-self: flex-start;
 }
 
 .about img:last-child {
-  position: relative;
-  z-index: 2;
-  margin-top: -100px;
-  align-self: flex-end;
-  width: 70%;
+    position: relative;
+    z-index: 2;
+    margin-top: -100px;
+    align-self: flex-end;
+    width: 70%;
 }
 
 .about img:hover,
 .about img:focus {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 44px rgba(0,0,0,0.48);
-  outline: none;
+    transform: translateY(-6px);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.48);
+    outline: none;
 }
 
 .aboutLink {
@@ -411,7 +415,6 @@ figcaption {
     .wrap {
         position: relative;
         width: 100dvw;
-        padding: 80px 0 72px;
         color: #ffffff;
     }
 
@@ -425,39 +428,153 @@ figcaption {
         pointer-events: none;
     }
 
+    .container {
+        max-width: none;
+        padding-inline: 0 !important;
+    }
+
     .intro1 {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
+        background: url(/images/Tunnel2.jpg)no-repeat center center/cover;
         text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
+        height: 800px;
+        width: 100dvw;
+    }
+
+    .intro1Gradient {
+        background: radial-gradient(rgb(0 0 0 / 68%));
+        height: 100%;
     }
 
     .intro1 p {
-        padding: 20px;
+        padding: 200px 350px;
+        font-size: 2.5rem;
+    }
+
+    .intro1img {
+        display: none;
     }
 
     .intro2 {
-        padding: 100px;
-        margin: 50px;
-        border: 10px solid rgb(160 32 240);
-        text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
-        box-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
-        border-radius: 50px;
+        display: none;
+    }
+
+    .intro2Desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 100dvw;
+        height: 100vh;
         box-sizing: border-box;
+        margin-bottom: 450px;
     }
 
-    .intro2img {
-        display: flex;
-        flex-direction: row;
-        padding: 20px;
+    .intro1Gradient {
+        background: radial-gradient(rgb(0 0 0 / 68%));
+        height: 100%;
+        padding: 100px 50px;
     }
 
-    .intro2 img {
-        width: 50%;
-        height: auto;
+    .intro2Desktop .cell {
+        position: relative;
+        overflow: hidden;
+        min-height: 0;
+        display: block;
+        background-color: #000;
+        padding: 0;
+        height: 400px;
+    }
+
+    .cell h3,
+    .cell p {
+        font-weight: 300;
+        
+        margin: 0;
+    }
+
+    .cell h3 {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 2rem;
+        padding-top: 12px;
+        text-shadow: 0 0 10px rgba(160, 32, 240, .25), 0 0 22px rgba(160, 32, 240, .18);
+        text-align: left;
+    }
+
+    .cell p {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2rem;
+        margin: 12px 20px 0 20px;
+        text-align: center;
+    }
+
+    .cell:hover {
+        cursor: pointer;
+    }
+
+    
+
+    /* posizionamento esplicito delle 6 celle */
+    .intro2Desktop .cell1 {
+        background: url(/images/eventi.webp)no-repeat center center/cover;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .intro2Desktop .cell2 {
+        background: url(/images/azienda.webp)no-repeat center center/cover;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .intro2Desktop .cell3 {
+        background: url(/images/sfondo.jpg)no-repeat center center/cover;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .intro2Desktop .cell4 {
+        background: url(/images/introimg6.webp)no-repeat center center/cover;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .intro2Desktop .cell5 {
+        background: url(/images/montaggio.webp)no-repeat center center/cover;
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .intro2Desktop .cell6 {
+        background: url(/images/introimg5.webp)no-repeat center center/cover;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    /* contenuti (video / immagini) all'interno della cella mantengono object-fit */
+    .intro2Desktop .cell video,
+    .intro2Desktop .cell img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        padding: 15px;
+        display: block;
     }
+
+    .bottomp {
+        padding-top: 200px;
+        width: 100dvw;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .portfolioLink {
+        margin: 0;
+    }
+
+    .about {
+        margin-top: 300px;
+    }
+
 
     .line {
         margin: 0 0 12px;
@@ -476,5 +593,9 @@ figcaption {
             0 0 10px rgba(160, 32, 240, .25),
             0 0 22px rgba(160, 32, 240, .18);
         font-weight: 700;
+    }
+
+    .mobileLayout {
+        display: none;
     }
 }
