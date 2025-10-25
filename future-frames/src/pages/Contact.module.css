@@ -36,6 +36,7 @@
   font-size: 1.75rem;
   letter-spacing: 0.6px;
   color: #fff;
+  text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
 }
 
 /* form layout */
