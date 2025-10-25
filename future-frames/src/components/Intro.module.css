@@ -315,7 +315,16 @@ figcaption {
     box-sizing: border-box;
 }
 
-.about img {
+.about h5 {
+    display: none;
+}
+
+.aboutImg {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutImg img {
     display: block;
     width: 70%;
     height: 400px;
@@ -325,14 +334,14 @@ figcaption {
     background-color: #111;
 }
 
-.about img:first-child {
+.aboutImg img:first-child {
     position: relative;
     z-index: 1;
     transform-origin: center;
     align-self: flex-start;
 }
 
-.about img:last-child {
+.aboutImg img:last-child {
     position: relative;
     z-index: 2;
     margin-top: -100px;
@@ -340,8 +349,8 @@ figcaption {
     width: 70%;
 }
 
-.about img:hover,
-.about img:focus {
+.aboutImg img:hover,
+.aboutImg img:focus {
     transform: translateY(-6px);
     box-shadow: 0 20px 44px rgba(0, 0, 0, 0.48);
     outline: none;
@@ -561,6 +570,7 @@ figcaption {
     }
 
     .bottomp {
+        padding-left: 10px;
         padding-top: 200px;
         width: 100dvw;
         font-size: 1.5rem;
@@ -569,10 +579,11 @@ figcaption {
 
     .portfolioLink {
         margin: 0;
+        text-align: right;
     }
 
-    .about {
-        margin-top: 300px;
+    .serviziLink {
+        display: none;
     }
 
 
@@ -597,5 +608,19 @@ figcaption {
 
     .mobileLayout {
         display: none;
+    }
+
+    .about {
+        margin-top: 100px;
+    }
+
+    .about h5 {
+        font-size: 1.5rem;
+        display: block;
+        margin: 5px;
+    }
+
+    .ivanTitle {
+        text-align: right;
     }
 }

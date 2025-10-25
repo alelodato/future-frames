@@ -22,7 +22,6 @@ body {
 .container {
   width: 100%;
   max-width: var(--maxw);
-  padding-inline: 20px
 }
 
 /* link reset */

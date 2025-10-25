@@ -386,8 +386,20 @@ export default function Intro() {
             </p>
           </Link>
           <div className={styles.about}>
-            <img src="/images/gloria2.jpeg" alt="immagine-gloria" />
-            <img src="/images/ivan.jpeg" alt="immagine-ivan" />
+            <h5>
+              <strong>Gloria Margarino</strong> <br /> Co-founder di Future
+              Frames, fotografa e videomaker.
+            </h5>
+            <Link to="/about">
+            <div className={styles.aboutImg}>
+              <img src="/images/gloria2.jpeg" alt="immagine-gloria" />
+              <img src="/images/ivan.jpeg" alt="immagine-ivan" />
+            </div>
+            </Link>
+            <h5 className={styles.ivanTitle}>
+              <strong>Ivan Scrofani</strong> <br /> Co-founder di Future Frames
+              e Video Editor.
+            </h5>
           </div>
           <Link to="/about" className={styles.aboutLink}>
             <p>
