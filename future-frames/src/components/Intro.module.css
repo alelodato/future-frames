@@ -31,8 +31,8 @@
 
 .wrap {
     position: relative;
+    background: radial-gradient(ellipse at center, #a020f08f 0%, #000000 70%);
     width: 100%;
-    background: url(/images/NeonWall2.jpeg)no-repeat center center/cover;
     color: #ffffff;
     box-sizing: border-box;
     z-index: 2;
@@ -127,7 +127,7 @@
 /* testi adattati per mobile */
 .line {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.4;
     letter-spacing: .2px;
     text-wrap: balance;
