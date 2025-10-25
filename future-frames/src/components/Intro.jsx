@@ -196,7 +196,7 @@ export default function Intro() {
               <span className={styles.glow}> restano nel tempo.</span>
               <Link to="/portfolio" className={styles.portfolioLink}>
                 <p>
-                  SCOPRI IL NOSTRO PORTFOLIO{" "}
+                  Scopri il nostro portfolio{" "}
                   <i className="fa-solid fa-circle-arrow-right"></i>
                 </p>
               </Link>
