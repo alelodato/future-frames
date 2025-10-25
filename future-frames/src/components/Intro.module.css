@@ -367,8 +367,7 @@ figcaption {
 
     .intro1 p {
         width: 100%;
-        padding: 16px;
-        font-size: 2.5rem;
+        font-size: 2rem;
         text-align: center;
     }
 
@@ -390,6 +389,10 @@ figcaption {
     .intro2 img {
         width: 50%;
         padding: 8px;
+    }
+
+    .intro3 {
+        margin: 30px 220px;
     }
 
     .line {
