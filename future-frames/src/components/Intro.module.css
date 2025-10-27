@@ -453,7 +453,7 @@ figcaption {
     .intro1 {
         background: url(/images/Tunnel2.jpg)no-repeat center center/cover;
         text-shadow: 0 0 2px var(--white), 0 0 10px rgba(160, 32, 240, .7), 0 0 22px rgba(160, 32, 240, .55);
-        height: 800px;
+        height: 600px;
         width: 100dvw;
     }
 
@@ -464,7 +464,7 @@ figcaption {
 
     .intro1 p {
         padding: 200px 350px;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .intro1img {
