@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styles from "./About.module.css";
-import videoBg from "../assets/videos/ShowreelAgg.2025.mp4";
 import videoBg2 from "../assets/videos/SpotEneaXAmazonE-Commerce.mp4";
 import videoIvan from "../assets/videos/ToyotaXReply.mp4";
 
@@ -26,7 +25,7 @@ function About() {
       <div className={styles.gloria}>
         <video
           className={styles.video}
-          src={videoBg}
+          src={videoIvan}
           autoPlay
           loop
           muted

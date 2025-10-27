@@ -32,7 +32,7 @@
   z-index: 2;
 }
 
-.video {
+.videoMobile {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,6 +41,10 @@
   object-fit: cover;
   z-index: -2;
   transform: translate(-50%, -50%);
+}
+
+.videoDesktop {
+  display: none;
 }
 
 .overlay {
@@ -56,6 +60,7 @@
 }
 
 .title {
+  width: 100dvw;
   font-family: "Party";
   font-optical-sizing: auto;
   font-weight: 400;
@@ -75,6 +80,7 @@
 }
 
 .ctas {
+  width: 100dvw;
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
@@ -130,7 +136,23 @@
   .title {
     font-size: 3.5rem;
   }
-  
+
+  .videoMobile {
+    display: none;
+  }
+
+  .videoDesktop {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+  }
+
   .content {
     margin-top: 150px;
   }

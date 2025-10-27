@@ -1,13 +1,22 @@
 import styles from "./Hero.module.css";
 import { Link } from "react-router-dom";
-import videoBg from "../assets/videos/ShowreelAgg.2025.mp4";
+import videoBgMobile from "../assets/videos/Showreel-Mobile.mp4";
+import videoBgDesktop from "../assets/videos/Showreel-Desktop.mp4";
 
 export default function Hero() {
   return (
     <section className={styles.hero} aria-label="Future Frames hero">
       <video
-        className={styles.video}
-        src={videoBg}
+        className={styles.videoMobile}
+        src={videoBgMobile}
+        autoPlay
+        loop
+        muted
+        playsInline
+      ></video>
+      <video
+        className={styles.videoDesktop}
+        src={videoBgDesktop}
         autoPlay
         loop
         muted
